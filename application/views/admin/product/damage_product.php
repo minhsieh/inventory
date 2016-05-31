@@ -24,12 +24,12 @@
                             <thead ><!-- Table head -->
                             <tr>
                                 <th class="active">Sl</th>
-                                <th class="active">Product Code</th>
-                                <th class="active">Product Name</th>
-                                <th class="active">Category</th>
-                                <th class="active">Damage Qty</th>
-                                <th class="active">Note</th>
-                                <th class="active">Date</th>
+                                <th class="active">商品代碼</th>
+                                <th class="active">商品名稱</th>
+                                <th class="active">分類</th>
+                                <th class="active">壞損數量</th>
+                                <th class="active">註記</th>
+                                <th class="active">日期</th>
 
                             </tr>
                             </thead><!-- / Table head -->
@@ -53,7 +53,7 @@
                             ?><!--get all sub category if not this empty-->
                             <?php else : ?> <!--get error message if this empty-->
                                 <td colspan="7">
-                                    <strong>There is no record for display</strong>
+                                    <strong>目前沒有紀錄顯示</strong>
                                 </td><!--/ get error message if this empty-->
                             <?php endif; ?>
                             </tbody><!-- / Table body -->

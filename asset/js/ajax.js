@@ -335,33 +335,23 @@ function check_user_name(str) {
 //*********************************************
 
 function get_category(str) {
-
+    $("#subcategory").html("<option value=''>Select Subcategory</option>");
     if (str == '') {
-        $("#subcategory").html("<option value=''>Select Subcategory</option>");
+        
     } else {
-        $("#subcategory").html("<option value=''>Select Subcategory</option>");
-
         var link = getBaseURL();
         var strURL = link + "admin/product/get_subcategory_by_category/" + str;
-        var req = getXMLHTTP();
-        if (req) {
-
-            req.onreadystatechange = function() {
-                if (req.readyState == 4) {
-                    // only if "OK"
-                    if (req.status == 200) {
-                        var result = req.responseText;
-                        //alert(result);
-                        $("#subcategory").html("<option value=''>Select Subcategory</option>");
-                        $("#subcategory").append(result);
-                    } else {
-                        alert("There was a problem while using XMLHTTP:\n" + req.statusText);
-                    }
-                }
+        $.ajax({
+            'type' : 'POST',
+            'url'  : strURL,
+            success : function(sendback){
+                $("#subcategory").html("<option value=''>Select Subcategory</option>");
+                $("#subcategory").append(sendback);
+            },
+            error : function(sendback){
+                console.log('failed');
             }
-            req.open("POST", strURL, true);
-            req.send(null);
-        }
+        });
     }
 }
 

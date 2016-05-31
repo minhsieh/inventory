@@ -12,7 +12,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add Damage Product</h3>
+                        <h3 class="box-title ">新增壞損商品</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -30,7 +30,7 @@
 
                                 <!-- /.product -->
                                 <div class="form-group">
-                                    <label>Select Product<span class="required">*</span></label>
+                                    <label>選擇商品<span class="required">*</span></label>
                                     <select id="e2" style="width: 100%;" name="product_id" required>
                                         <option value="">Select Product</option>
                                         <?php if (!empty($product)): ?>
@@ -46,23 +46,23 @@
 
                                 <!-- /.damage qty -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Damage Quantity <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">壞損數量 <span class="required">*</span></label>
                                     <input type="text" name="qty" placeholder="Damage Qty" class="form-control">
                                 </div>
 
                                 <!-- /.note -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Notes</label>
+                                    <label for="exampleInputEmail1">註記</label>
                                     <textarea name="note" class="form-control autogrow"
                                               placeholder="Note"></textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Decrease From Stock</label>
+                                    <label for="exampleInputEmail1">是否從庫存扣除</label>
                                     <select name="decrease" class="form-control">
-                                        <option value="">Decrease From Stock ?</option>
-                                        <option value="1">Yes</option>
-                                        <option value="0">No</option>
+                                        <option value="">是否從庫存扣除 ?</option>
+                                        <option value="1">是</option>
+                                        <option value="0">否</option>
                                     </select>
                                 </div>
 
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn bg-navy col-md-offset-3" type="submit">Add Damage Product
+                        <button type="submit" class="btn bg-navy col-md-offset-3" type="submit">送出
                         </button>
                     </div>
                 </form>
@@ -88,7 +88,7 @@
 <script>
     $(document).ready(function() {
         $("#e2").select2({
-            placeholder: "Select a State",
+            placeholder: "請選擇一個狀態",
             allowClear: true
         });
     });

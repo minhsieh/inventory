@@ -14,23 +14,19 @@
 
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Customer Name <span class="required">*</span></label>
-        <input name="customer_name" placeholder="Customer Name" value="" class="form-control" type="text">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Customer Name <span class="required">*</span></label>
-        <input name="customer_name" placeholder="Customer Name" value="" class="form-control" type="text">
+        <label for="exampleInputEmail1">客戶名稱 <span class="required">*</span></label>
+        <input name="customer_name" placeholder="客戶名稱" value="" class="form-control" type="text">
     </div>
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Address <span class="required">*</span></label>
-        <textarea name="address" class="form-control autogrow" id="field-ta" placeholder="Address"></textarea>
+        <label for="exampleInputEmail1">地址 <span class="required">*</span></label>
+        <textarea name="address" class="form-control autogrow" id="field-ta" placeholder="地址"></textarea>
     </div>
 
 
     <div class="modal-footer" >
-            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-            <a href="<?php echo base_url(); ?>admin/product/add_product/" type="button" class="btn bg-navy">save Damage Product </a>
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+            <a href="<?php echo base_url(); ?>admin/product/add_product/" type="button" class="btn bg-navy">儲存 </a>
     </div>
 
 </div>

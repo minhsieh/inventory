@@ -18,7 +18,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add New Product</h3>
+                        <h3 class="box-title ">新增商品</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -33,20 +33,20 @@
                     <br/><br/>
 
                     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                        <li class="<?php if(empty($tab)){ echo 'active';} ?>"><a href="#general" data-toggle="tab">General</a></li>
+                        <li class="<?php if(empty($tab)){ echo 'active';} ?>"><a href="#general" data-toggle="tab">基本</a></li>
                         <li class="<?php
                             if(!empty($tab)){
                                 echo $tab == 'price'?'active':'';
                             }
                         ?>">
-                            <a href="#price" data-toggle="tab">Price</a></li>
-                        <li><a href="#inventory" data-toggle="tab">Inventory</a></li>
+                            <a href="#price" data-toggle="tab">價格</a></li>
+                        <li><a href="#inventory" data-toggle="tab">庫存</a></li>
                         <li class="<?php
                         if(!empty($tab)){
                             echo $tab == 'attribute'?'active':'';
                         }
                         ?>">
-                            <a href="#attribute" data-toggle="tab">Attribute & Tag</a></li>
+                            <a href="#attribute" data-toggle="tab">屬性與標籤</a></li>
 
                     </ul>
 
@@ -64,16 +64,16 @@
                                         <!-- /.Product Code -->
                                         <?php if (!empty($product_info->product_id)) {?>
                                         <div class="form-group">
-                                            <label>Product Code</label>
-                                            <input type="text"  placeholder="Product Code"
+                                            <label>商品代碼</label>
+                                            <input type="text"  placeholder="商品代碼"
                                                    value="<?php echo $product_info->product_code ?>"
                                                    class="form-control" disabled>
                                         </div>
                                         <?php }else { ?>
 
                                             <div class="form-group">
-                                                <label>Product Code</label>
-                                                <input type="text"  placeholder="Product Code"
+                                                <label>商品代碼</label>
+                                                <input type="text"  placeholder="商品代碼"
                                                        value="<?php echo $code ?>"
                                                        class="form-control" disabled>
                                             </div>
@@ -82,8 +82,8 @@
 
                                         <!-- /.Product Name -->
                                         <div class="form-group">
-                                            <label>Product Name <span class="required">*</span></label>
-                                            <input type="text" placeholder="Product Name" name="product_name"
+                                            <label>商品名稱 <span class="required">*</span></label>
+                                            <input type="text" placeholder="商品名稱" name="product_name"
                                                    value="<?php
                                                    if (!empty($product_info)) {
                                                        echo $product_info->product_name;
@@ -94,9 +94,9 @@
 
                                         <!-- /.Product Note -->
                                         <div class="form-group">
-                                            <label>Product Note</label>
+                                            <label>商品註記</label>
                                             <textarea name="product_note" class="form-control autogrow" id="field-ta"
-                                                      placeholder="Product Note"><?php
+                                                      placeholder="商品註記"><?php
                                                 if (!empty($product_info)) {
                                                     echo $product_info->product_note;
                                                 }
@@ -105,9 +105,9 @@
 
                                         <!-- /.Category -->
                                         <div class="form-group">
-                                            <label>Product Category</label>
+                                            <label>商品分類</label>
                                             <select name="category_id" class="form-control col-sm-5" id="category" onchange="get_category(this.value)">
-                                                <option value="">Select Product Category</option>
+                                                <option value="">選擇商品分類</option>
                                                 <?php if (!empty($category)): ?>
                                                     <?php foreach ($category as $v_category) : ?>
                                                         <option value="<?php echo $v_category->category_id; ?>"
@@ -125,9 +125,9 @@
 
                                         <!-- /.Sub Category -->
                                         <div class="form-group">
-                                            <label>Subcategory<span class="required">*</span></label>
+                                            <label>子分類<span class="required">*</span></label>
                                             <select name="subcategory_id" class="form-control col-sm-5" id="subcategory">
-                                                <option value="">Product Subcategory</option>
+                                                <option value="">商品子分類</option>
                                                 <?php if (!empty($subcategory)): ?>
                                                     <?php foreach ($subcategory as $v_subcategogy) : ?>
                                                         <option value="<?php echo $v_subcategogy->subcategory_id; ?>"
@@ -145,9 +145,9 @@
 
                                         <!-- /.Tax -->
                                         <div class="form-group">
-                                            <label>Tax <span class="required">*</span></label>
+                                            <label>稅額 <span class="required">*</span></label>
                                             <select name="tax_id" class="form-control col-sm-5">
-                                                <option value="">Select Tax</option>
+                                                <option value="">請選擇稅額</option>
                                                 <?php foreach($tax as $v_tax) { ?>
                                                     <option value="<?php echo $v_tax->tax_id ?>"
                                                         <?php
@@ -163,7 +163,7 @@
 
                                         <!-- /.Product Image -->
                                         <div class="form-group">
-                                            <label>Product Image</label>
+                                            <label>商品圖片</label>
                                         </div>
                                         <div class="form-group">
                                             <!-- hidden  old_path when update  -->
@@ -185,9 +185,9 @@
                                                     <span class="btn btn-default btn-file">
                                                         <span class="fileinput-new">
                                                             <input type="file" name="product_image" /></span>
-                                                        <span class="fileinput-exists">Change</span>
+                                                        <span class="fileinput-exists">更換</span>
                                                     </span>
-                                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">移除</a>
                                                 </div>
                                                 <div id="valid_msg" class="required"></div>
                                             </div>
@@ -213,13 +213,13 @@
                                 " id="price">
 
                                     <!-- /.General Price Start -->
-                                    <h4>Product General Price</h4>
+                                    <h4>商品定價</h4>
                                     <div class="box">
                                         <div class="box-body">
 
                                             <!-- /.Buying Price -->
                                             <div class="form-group">
-                                                <label>Buying Price <span class="required">*</span></label>
+                                                <label>買入價格 <span class="required">*</span></label>
 
                                             <div class="input-group">
                                                 <span class="input-group-addon">
@@ -243,7 +243,7 @@
 
                                             <!-- /.Selling Price -->
                                             <div class="form-group form-group-bottom">
-                                                <label>Selling Price</label>
+                                                <label>售出價格</label>
 
                                             <div class="input-group">
                                                 <span class="input-group-addon">
@@ -274,13 +274,13 @@
                                     <!-- ************* Special Offer Tab Start ************** -->
 
                                     <!-- /.Special Offer Start -->
-                                    <h4>Special Offer</h4>
+                                    <h4>特殊優惠</h4>
                                     <div class="box">
                                         <div class="box-body">
 
                                             <!-- /.Start Date -->
                                             <div class="form-group form-group-bottom">
-                                                <label>Start Date</label>
+                                                <label>開始日期</label>
                                             </div>
                                             <div class="input-group">
                                                 <input type="text" value="<?php
@@ -298,7 +298,7 @@
                                             <!-- /.End Date -->
                                             <div class="form-group form-group-bottom">
                                             <div class="form-group form-group-bottom">
-                                                <label >End Date</label>
+                                                <label >結束日期</label>
                                             </div>
                                             <div class="input-group">
                                                 <input type="text" value="<?php
@@ -317,7 +317,7 @@
 
                                             <!-- /.Selling Price -->
                                             <div class="form-group form-group-bottom">
-                                                <label>Special Offer Price</label>
+                                                <label>特殊優惠價格</label>
 
                                             <div class="input-group">
                                                 <span class="input-group-addon">
@@ -329,7 +329,7 @@
                                                         echo '$';
                                                     } ?>
                                                 </span>
-                                                <input class="form-control" placeholder="Price" name="offer_price"
+                                                <input class="form-control" placeholder="價格" name="offer_price"
                                                        value="<?php
                                                        if (!empty($special_offer)) {
                                                            echo $special_offer->offer_price;
@@ -348,7 +348,7 @@
                                     <!-- ************* Product Tier Price Start *********** -->
 
                                     <!-- /.Tier Price Start -->
-                                    <h4>Tier Price</h4>
+                                    <h4>層級式價格</h4>
                                     <div class="box">
                                         <div class="box-body">
 
@@ -357,9 +357,9 @@
                                                     <thead>
 
                                                     <tr>
-                                                        <th class="col-sm-3">Quantity Above</th>
-                                                        <th class="">Selling Price</th>
-                                                        <th class="col-sm-2"> <a  href="javascript:void(0);" class="addTire btn btn-info "><i class="fa fa-plus"></i> Add More</a></th>
+                                                        <th class="col-sm-3">數量高於</th>
+                                                        <th class="">賣出價格</th>
+                                                        <th class="col-sm-2"> <a  href="javascript:void(0);" class="addTire btn btn-info "><i class="fa fa-plus"></i> 新增更多</a></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -367,7 +367,7 @@
                                                         <?php foreach($tier_price as $v_tire){?>
                                                             <tr>
                                                                 <td><div class="form-group form-group-bottom">
-                                                                    <input type="text" name="tier_quantity[]" placeholder="Quantity"
+                                                                    <input type="text" name="tier_quantity[]" placeholder="數量"
                                                                            value="<?php echo $v_tire->quantity_above ?>" class="form-control">
                                                                         </div>
                                                                 </td>
@@ -383,7 +383,7 @@
                                                                                     echo '$';
                                                                                 } ?>
                                                                             </span>
-                                                                            <input class="form-control" value="<?php echo $v_tire->tier_price ?>" placeholder="Price" name="tier_price[]" type="text">
+                                                                            <input class="form-control" value="<?php echo $v_tire->tier_price ?>" placeholder="價格" name="tier_price[]" type="text">
                                                                         </div>
                                                                     </div>
                                                                 </td>
@@ -398,7 +398,7 @@
                                                     <?php } else {?>
                                                         <tr>
                                                             <td><div class="form-group form-group-bottom">
-                                                                <input type="text" name="tier_quantity[]" placeholder="Quantity"
+                                                                <input type="text" name="tier_quantity[]" placeholder="數量"
                                                                        value="" class="form-control">
                                                                     </div>
                                                             </td>
@@ -414,7 +414,7 @@
                                                                                     echo '$';
                                                                                 } ?>
                                                                             </span>
-                                                                        <input class="form-control" placeholder="Price" name="tier_price[]" type="text">
+                                                                        <input class="form-control" placeholder="價格" name="tier_price[]" type="text">
                                                                     </div>
                                                                 </div></td>
                                                         </tr>
@@ -437,14 +437,14 @@
                                 <div class="tab-pane" id="inventory">
 
                                     <!-- /.Product Inventory Start -->
-                                    <h4>Product Inventory</h4>
+                                    <h4>商品庫存</h4>
                                     <div class="box">
                                         <div class="box-body">
 
                                             <!-- /.Buying Price -->
                                             <div class="form-group">
-                                                <label>Product Quantity </label>
-                                                <input type="text" id="product_quantity" name="product_quantity" placeholder="Quantity"
+                                                <label>商品數量 </label>
+                                                <input type="text" id="product_quantity" name="product_quantity" placeholder="數量"
                                                        value="<?php
                                                        if (!empty($inventory)) {
                                                            echo $inventory->product_quantity;
@@ -455,8 +455,8 @@
 
                                             <!-- /.Selling Price -->
                                             <div class="form-group">
-                                                <label>Notify Bellow Quantity </label>
-                                                <input type="text" name="notify_quantity" placeholder="Notify Quantity"
+                                                <label>價格過低提醒數量 </label>
+                                                <input type="text" name="notify_quantity" placeholder="提醒數量"
                                                        value="<?php
                                                        if (!empty($inventory)) {
                                                            echo $inventory->notify_quantity;
@@ -486,7 +486,7 @@
                                 " id="attribute">
 
                                     <!-- /.Attribute Start -->
-                                    <h4>Product Attribute</h4>
+                                    <h4>商品屬性</h4>
                                     <div class="box">
                                         <div class="box-body">
                                             <div class="table">
@@ -494,9 +494,9 @@
                                                     <thead>
 
                                                     <tr>
-                                                        <th class="">Attribute</th>
-                                                        <th class="">Value</th>
-                                                        <th class="col-sm-2"> <a  href="javascript:void(0);" class="addAttribute btn btn-info "><i class="fa fa-plus"></i> Add More</a></th>
+                                                        <th class="">屬性</th>
+                                                        <th class="">數值</th>
+                                                        <th class="col-sm-2"> <a  href="javascript:void(0);" class="addAttribute btn btn-info "><i class="fa fa-plus"></i> 新增更多</a></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -505,12 +505,12 @@
 
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="text" name="attribute_name[]" placeholder="Label"
+                                                                        <input type="text" name="attribute_name[]" placeholder="標籤"
                                                                                value="<?php echo $v_attribute->attribute_name ?>" class="form-control selector" autocomplete="off">
                                                                     </td>
                                                                     <td>
 
-                                                                        <input type="text" name="attribute_value[]" placeholder="Value"
+                                                                        <input type="text" name="attribute_value[]" placeholder="數值"
                                                                                value="<?php echo $v_attribute->attribute_value ?>" class="form-control">
 
                                                                     </td>
@@ -526,12 +526,12 @@
                                                                 <td>
 
 
-                                                                    <input type="text"  name="attribute_name[]" placeholder="Label"
+                                                                    <input type="text"  name="attribute_name[]" placeholder="標籤"
                                                                            value="" class="form-control selector" autocomplete="off">
                                                                 </td>
                                                                 <td>
 
-                                                                    <input type="text" name="attribute_value[]" placeholder="Value"
+                                                                    <input type="text" name="attribute_value[]" placeholder="數值"
                                                                            value="" class="form-control">
 
                                                                 </td>
@@ -547,7 +547,7 @@
                                     <!-- ************* Product Attribute End ******** -->
 
                                     <!-- /.Product Tag Start -->
-                                    <h4>Product Tag</h4>
+                                    <h4>商品標籤</h4>
                                     <div class="box">
                                         <div class="box-body">
 
@@ -612,7 +612,7 @@
                     </div>
 
                     <div class="box-footer">
-                        <button type="submit"  id="submit" class="btn bg-navy col-md-offset-3" type="submit">Save Product
+                        <button type="submit"  id="submit" class="btn bg-navy col-md-offset-3" type="submit">儲存商品
                         </button>
                     </div>
 
@@ -633,7 +633,7 @@
                 '<tr>\
                     <td>\
                     <div class="form-group form-group-bottom">\
-                        <input type="text" name="tier_quantity[]" required placeholder="Quantity"\
+                        <input type="text" name="tier_quantity[]" required placeholder="數量"\
             value="" class="form-control">\
             </div>\
                     </td>\
@@ -649,11 +649,11 @@
                                                         echo '$';
                                                     } ?>
                 </span>\
-            <input class="form-control" placeholder="Price" name="tier_price[]" required type="text">\
+            <input class="form-control" placeholder="價格" name="tier_price[]" required type="text">\
             </div>\
             </div>\
                         </td>\
-                        <td><a href="javascript:void(0);" class="remTire">Remove</a></td>\
+                        <td><a href="javascript:void(0);" class="remTire">移除</a></td>\
                     </tr>'
             );
         });
@@ -665,14 +665,14 @@
             $("#attributeFields").append(
                 '<tr>\
                     <td>\
-                        <input type="text"  name="attribute_name[]" placeholder="Label"\
+                        <input type="text"  name="attribute_name[]" placeholder="標籤"\
             value="" class="form-control selector ui-autocomplete-input" autocomplete="off">\
                     </td>\
                     <td>\
-                        <input type="text" name="attribute_value[]" placeholder="Value"\
+                        <input type="text" name="attribute_value[]" placeholder="數值"\
             value="" class="form-control">\
                         </td>\
-                        <td><a href="javascript:void(0);" class="remAttribute">Remove</a></td>\
+                        <td><a href="javascript:void(0);" class="remAttribute">移除</a></td>\
                         <input type="hidden" name="class_routine_details_id[]" value="">\
                     </tr>'
             );

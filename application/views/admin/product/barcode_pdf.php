@@ -39,7 +39,7 @@
         <?php }?>
     <?php }else {?>
         <div class="col-md-12">
-            <?php echo "There is No Product Barcode for Print" ?>
+            <?php echo "目前沒有任何條碼需要列印" ?>
         </div>
     <?php } ?>
 

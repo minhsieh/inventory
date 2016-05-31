@@ -11,7 +11,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Product Category</h3>
+                        <h3 class="box-title ">商品分類</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -33,7 +33,7 @@
 
                                 <!-- /.Company Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Product Category <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">商品分類 <span class="required">*</span></label>
                                     <input type="text" required name="category_name" placeholder="Category Name"
                                            value="<?php
                                            if (!empty($category_info->category_name)) {
@@ -43,7 +43,7 @@
                                            class="form-control">
                                 </div>
 
-                                <button type="submit" class="btn bg-navy" type="submit">Save Product Category
+                                <button type="submit" class="btn bg-navy" type="submit">儲存商品分類
                                 </button><br/><br/>
                             </div>
                             <!-- /.box-body -->
@@ -63,8 +63,8 @@
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Category Name</th>
-                        <th class=" active col-sm-2">Action</th>
+                        <th class="active">分類名稱</th>
+                        <th class=" active col-sm-2">動作</th>
 
                     </tr>
                     </thead>
@@ -87,7 +87,7 @@
                     ?><!--get all category if not this empty-->
                     <?php else : ?> <!--get error message if this empty-->
                         <td colspan="3">
-                            <strong>There is no record for display</strong>
+                            <strong>目前沒有紀錄顯示</strong>
                         </td><!--/ get error message if this empty-->
                     <?php
                     endif; ?>

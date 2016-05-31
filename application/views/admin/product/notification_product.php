@@ -12,7 +12,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
 
-                        <h3 class="box-title ">Notification Product</h3>
+                        <h3 class="box-title ">提醒商品</h3>
 
                 </div>
 
@@ -23,11 +23,11 @@
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead ><!-- Table head -->
                             <tr>
-                                <th class="active">Image</th>
-                                <th class="active">Code</th>
-                                <th class="active">Product Name</th>
-                                <th class="active">Stock Available</th>
-                                <th class="active">Action</th>
+                                <th class="active">圖片</th>
+                                <th class="active">代碼</th>
+                                <th class="active">商品名稱</th>
+                                <th class="active">現有庫存</th>
+                                <th class="active">動作</th>
 
                             </tr>
                             </thead><!-- / Table head -->
@@ -69,7 +69,7 @@
                             ?><!--get all sub category if not this empty-->
                             <?php else : ?> <!--get error message if this empty-->
                                 <td colspan="8">
-                                    <strong>There is no data to display</strong>
+                                    <strong>目前沒有紀錄顯示</strong>
                                 </td><!--/ get error message if this empty-->
                             <?php endif; ?>
                             </tbody><!-- / Table body -->
