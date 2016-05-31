@@ -9,7 +9,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add New Supplier</h3>
+                        <h3 class="box-title ">新增供應商</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -29,8 +29,8 @@
 
                                 <!-- /.Company Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Company Name <span class="required">*</span></label>
-                                    <input type="text" name="company_name" placeholder="Company Name"
+                                    <label for="exampleInputEmail1">公司名稱 Company Name<span class="required">*</span></label>
+                                    <input type="text" name="company_name" placeholder="公司名稱 Company Name"
                                            value="<?php
                                            if (!empty($supplier->company_name)) {
                                                echo $supplier->company_name;
@@ -41,8 +41,8 @@
 
                                 <!-- /.Company Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Supplier Name <span class="required">*</span></label>
-                                    <input type="text" name="supplier_name" placeholder="Supplier Name"
+                                    <label for="exampleInputEmail1">供應商名稱 Supplier Name <span class="required">*</span></label>
+                                    <input type="text" name="supplier_name" placeholder="供應商名稱 Supplier Name"
                                            value="<?php
                                            if (!empty($supplier->supplier_name)) {
                                                echo $supplier->supplier_name;
@@ -53,9 +53,9 @@
 
                                 <!-- /.Company Email -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email <span
+                                    <label for="exampleInputEmail1">電子信箱 Email <span
                                             class="required">*</span></label>
-                                    <input type="text" placeholder="Email" name="email"
+                                    <input type="text" placeholder="電子信箱 Email" name="email"
                                            value="<?php
                                            if (!empty($supplier->email)) {
                                                echo $supplier->email;
@@ -66,8 +66,8 @@
 
                                 <!-- /.Phone -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Phone<span class="required"> *</span></label>
-                                    <input type="text" placeholder="Phone" name="phone"
+                                    <label for="exampleInputEmail1">聯絡電話 Phone<span class="required"> *</span></label>
+                                    <input type="text" placeholder="聯絡電話Phone" name="phone"
                                            value="<?php
                                            if (!empty($supplier->phone)) {
                                                echo $supplier->phone;
@@ -78,9 +78,9 @@
 
                                 <!-- /.Address -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Address <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">地址 Address <span class="required">*</span></label>
                                     <textarea name="address" class="form-control autogrow" rows="10" id="ck_editor"
-                                              placeholder="Business Address" required><?php
+                                              placeholder="地址 Address" required><?php
                                         if (!empty($supplier->address)) {
                                             echo $supplier->address;
                                         }
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn bg-navy col-md-offset-3" type="submit">Add Supplier
+                        <button type="submit" class="btn bg-navy col-md-offset-3" type="submit">新增供應商
                         </button>
                     </div>
                 </form>

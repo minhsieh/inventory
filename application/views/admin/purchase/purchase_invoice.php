@@ -11,13 +11,13 @@ if(!empty($info->currency))
 
 <div class="box">
     <div class="box-header box-header-background with-border">
-        <h3 class="box-title">Purchase Invoice</h3>
+        <h3 class="box-title">採購報價單</h3>
         <div class="box-tools pull-right">
             <!-- Buttons, labels, and many other things can be placed here! -->
             <!-- Here is a label for example -->
             <div class="box-tools">
                 <div class="btn-group" role="group" >
-                    <a onclick="print_invoice('printableArea')" class="btn btn-default ">Print</a>
+                    <a onclick="print_invoice('printableArea')" class="btn btn-default ">列印</a>
                     <a href="<?php echo base_url() ?>admin/purchase/pdf_invoice/<?php echo $purchase->purchase_id ?>" class="btn btn-default ">PDF</a>
                 </div>
             </div>
@@ -34,7 +34,7 @@ if(!empty($info->currency))
                 <main >
                     <div id="details" class="clearfix">
                         <div id="client">
-                            <div class="to">SUPPLIER:</div>
+                            <div class="to">供應商:</div>
                             <h2 class="name"><?php echo $purchase->company_name ?></h2>
                             <div class="address"><?php echo $purchase->address ?></div>
                             <div class="address"><?php echo $purchase->phone ?></div>
@@ -51,10 +51,10 @@ if(!empty($info->currency))
                         <thead>
                         <tr>
                             <th class="no text-right">#</th>
-                            <th class="desc">DESCRIPTION</th>
-                            <th class="unit text-right">UNIT PRICE</th>
-                            <th class="qty text-right">QUANTITY</th>
-                            <th class="total text-right ">TOTAL</th>
+                            <th class="desc">描述</th>
+                            <th class="unit text-right">單價</th>
+                            <th class="qty text-right">數量</th>
+                            <th class="total text-right ">總計</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -73,7 +73,7 @@ if(!empty($info->currency))
                         <tfoot>
                         <tr>
                             <td colspan="2"></td>
-                            <td colspan="2">SUBTOTAL</td>
+                            <td colspan="2">小計</td>
                             <td><?php echo $currency.' '.number_format($purchase->grand_total,2) ?></td>
                         </tr>
                         <tr>
@@ -81,7 +81,7 @@ if(!empty($info->currency))
                         </tr>
                         <tr>
                             <td colspan="2"></td>
-                            <td colspan="2">GRAND TOTAL</td>
+                            <td colspan="2">總計</td>
                             <td><?php echo $currency.' '.number_format($purchase->grand_total,2) ?></td>
                         </tr>
                         </tfoot>

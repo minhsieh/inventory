@@ -26,7 +26,7 @@ CREATE TABLE `ci_sessions` (
   `user_agent` varchar(120) NOT NULL,
   `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
   `user_data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -37,7 +37,7 @@ CREATE TABLE `ci_sessions` (
 CREATE TABLE `installer` (
   `id` int(1) NOT NULL,
   `installer_flag` tinyint(4) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `installer`
@@ -209,42 +209,42 @@ CREATE TABLE `tbl_menu` (
 --
 
 INSERT INTO `tbl_menu` (`menu_id`, `label`, `link`, `icon`, `parent`, `sort`) VALUES
-  (1, 'Dashboard', 'admin/dashboard', 'fa fa-dashboard', 0, 1),
-  (2, 'Settings', '#', 'fa fa-cogs', 0, 15),
-  (3, 'Business Profile', 'admin/settings/business_profile', 'glyphicon glyphicon-briefcase', 2, 1),
-  (4, 'Employee Management', '#', 'entypo-users', 0, 20),
-  (5, 'Employee List', 'admin/employee/employee_list', 'fa fa-users', 4, 1),
-  (6, 'Add Employee', 'admin/employee/add_employee', 'entypo-user-add', 4, 2),
-  (7, 'Product', '#', 'glyphicon glyphicon-th-large', 0, 5),
-  (8, 'Category', '#', 'glyphicon glyphicon-indent-left', 7, 4),
-  (9, 'Product Category', 'admin/product/category', 'glyphicon glyphicon-tag', 8, 1),
-  (10, 'Sub Category', 'admin/product/subcategory', 'glyphicon glyphicon-tags', 8, 2),
-  (13, 'Add Product', 'admin/product/add_product', 'glyphicon glyphicon-plus', 7, 1),
-  (14, 'Manage Product', 'admin/product/manage_product', 'glyphicon glyphicon-th-list', 7, 2),
-  (17, 'Manage Tax Rules', 'admin/settings/tax', 'glyphicon glyphicon-credit-card', 2, 2),
-  (18, 'Manage Purchase', '#', 'fa fa-truck', 0, 3),
-  (19, 'Supplier', '#', 'glyphicon glyphicon-gift', 18, 1),
-  (20, 'Add Supplier', 'admin/purchase/add_supplier', 'glyphicon glyphicon-plus', 19, 1),
-  (21, 'Manage Supplier', 'admin/purchase/manage_supplier', 'glyphicon glyphicon-briefcase', 19, 2),
-  (22, 'Purchase', '#', 'glyphicon glyphicon-credit-card', 18, 2),
-  (23, 'New Purchase', 'admin/purchase/new_purchase', 'glyphicon glyphicon-shopping-cart', 22, 1),
-  (24, 'Purchase History', 'admin/purchase/purchase_list', 'glyphicon glyphicon-th-list', 22, 2),
-  (25, 'Customer', '', 'glyphicon glyphicon-user', 0, 7),
-  (26, 'Add Customer', 'admin/customer/add_customer', 'glyphicon glyphicon-plus', 25, 1),
-  (27, 'Manage Customer', 'admin/customer/manage_customer', 'glyphicon glyphicon-th-list', 25, 2),
-  (28, 'Damage Product', 'admin/product/damage_product', 'glyphicon glyphicon-trash', 7, 3),
-  (29, 'Barcode Print', 'admin/product/print_barcode', 'glyphicon glyphicon-barcode', 7, 3),
-  (30, 'Order Process', '#', 'glyphicon glyphicon-shopping-cart', 0, 6),
-  (31, 'New Order', 'admin/order/new_order', 'fa fa-cart-plus', 30, 1),
-  (32, 'Manage Order', 'admin/order/manage_order', 'glyphicon glyphicon-th-list', 30, 2),
-  (33, 'Manage Invoice', 'admin/order/manage_invoice', 'glyphicon glyphicon-list-alt', 30, 3),
-  (34, 'Report', 'admin/report', 'glyphicon glyphicon-signal', 0, 8),
-  (35, 'Sales Report', 'admin/report/sales_report', 'fa fa-bar-chart', 34, 1),
-  (36, 'Purchase Report', 'admin/report/purchase_report', 'fa fa-line-chart', 34, 2),
-  (37, 'Email Campaign', '#', 'glyphicon glyphicon-send', 0, 8),
-  (38, 'New campaign', 'admin/campaign/new_campaign', 'glyphicon glyphicon-envelope', 37, 1),
-  (39, 'Manage Campaign', 'admin/campaign/manage_campaign', 'glyphicon glyphicon-th-list', 37, 2),
-  (40, 'Camaign Result', 'admin/campaign/campaign_result', 'glyphicon glyphicon-bullhorn', 37, 3);
+  (1, '主介面', 'admin/dashboard', 'fa fa-dashboard', 0, 1),
+  (2, '設定', '#', 'fa fa-cogs', 0, 15),
+  (3, '公司資料', 'admin/settings/business_profile', 'glyphicon glyphicon-briefcase', 2, 1),
+  (4, '員工管理', '#', 'entypo-users', 0, 20),
+  (5, '員工列表', 'admin/employee/employee_list', 'fa fa-users', 4, 1),
+  (6, '新增員工', 'admin/employee/add_employee', 'entypo-user-add', 4, 2),
+  (7, '商品', '#', 'glyphicon glyphicon-th-large', 0, 5),
+  (8, '分類', '#', 'glyphicon glyphicon-indent-left', 7, 4),
+  (9, '商品分類', 'admin/product/category', 'glyphicon glyphicon-tag', 8, 1),
+  (10, '次分類', 'admin/product/subcategory', 'glyphicon glyphicon-tags', 8, 2),
+  (13, '新增商品', 'admin/product/add_product', 'glyphicon glyphicon-plus', 7, 1),
+  (14, '管理商品', 'admin/product/manage_product', 'glyphicon glyphicon-th-list', 7, 2),
+  (17, '稅額設定', 'admin/settings/tax', 'glyphicon glyphicon-credit-card', 2, 2),
+  (18, '管理採購', '#', 'fa fa-truck', 0, 3),
+  (19, '供應商', '#', 'glyphicon glyphicon-gift', 18, 1),
+  (20, '新增供應商', 'admin/purchase/add_supplier', 'glyphicon glyphicon-plus', 19, 1),
+  (21, '管理供應商', 'admin/purchase/manage_supplier', 'glyphicon glyphicon-briefcase', 19, 2),
+  (22, '採購', '#', 'glyphicon glyphicon-credit-card', 18, 2),
+  (23, '新增採購', 'admin/purchase/new_purchase', 'glyphicon glyphicon-shopping-cart', 22, 1),
+  (24, '採購歷史', 'admin/purchase/purchase_list', 'glyphicon glyphicon-th-list', 22, 2),
+  (25, '客戶', '', 'glyphicon glyphicon-user', 0, 7),
+  (26, '新增客戶', 'admin/customer/add_customer', 'glyphicon glyphicon-plus', 25, 1),
+  (27, '管理客戶', 'admin/customer/manage_customer', 'glyphicon glyphicon-th-list', 25, 2),
+  (28, '壞損商品', 'admin/product/damage_product', 'glyphicon glyphicon-trash', 7, 3),
+  (29, 'Barcode條碼列印', 'admin/product/print_barcode', 'glyphicon glyphicon-barcode', 7, 3),
+  (30, '訂購流程', '#', 'glyphicon glyphicon-shopping-cart', 0, 6),
+  (31, '新增訂單', 'admin/order/new_order', 'fa fa-cart-plus', 30, 1),
+  (32, '管理訂單', 'admin/order/manage_order', 'glyphicon glyphicon-th-list', 30, 2),
+  (33, '管理出貨單', 'admin/order/manage_invoice', 'glyphicon glyphicon-list-alt', 30, 3),
+  (34, '報告', 'admin/report', 'glyphicon glyphicon-signal', 0, 8),
+  (35, '銷售報告', 'admin/report/sales_report', 'fa fa-bar-chart', 34, 1),
+  (36, '採購報告', 'admin/report/purchase_report', 'fa fa-line-chart', 34, 2),
+  (37, '電子報', '#', 'glyphicon glyphicon-send', 0, 8),
+  (38, '新增電子報', 'admin/campaign/new_campaign', 'glyphicon glyphicon-envelope', 37, 1),
+  (39, '管理電子報', 'admin/campaign/manage_campaign', 'glyphicon glyphicon-th-list', 37, 2),
+  (40, '發送成果', 'admin/campaign/campaign_result', 'glyphicon glyphicon-bullhorn', 37, 3);
 
 -- --------------------------------------------------------
 
@@ -347,7 +347,7 @@ CREATE TABLE `tbl_product_tag` (
   `product_tag_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `tag` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -424,7 +424,7 @@ CREATE TABLE `tbl_supplier` (
   `email` varchar(100) NOT NULL,
   `phone` varchar(100) NOT NULL,
   `address` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -435,7 +435,7 @@ CREATE TABLE `tbl_supplier` (
 CREATE TABLE `tbl_tag` (
   `tag_id` int(11) NOT NULL,
   `tag` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -448,7 +448,7 @@ CREATE TABLE `tbl_tax` (
   `tax_title` varchar(100) NOT NULL,
   `tax_rate` double NOT NULL,
   `tax_type` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 

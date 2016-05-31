@@ -10,7 +10,7 @@
 
             <div class="box box-primary ">
                 <div class="box-header box-header-background with-border">
-                        <h3 class="box-title ">Manage Supplier</h3>
+                        <h3 class="box-title ">管理供應商</h3>
                 </div>
 
 
@@ -21,12 +21,12 @@
                             <thead ><!-- Table head -->
                             <tr>
                                 <th class="active ">Sl</th>
-                                <th class="active">Company Name</th>
-                                <th class="active">Supplier Name</th>
-                                <th class="active">Email</th>
-                                <th class="active">Phone</th>
+                                <th class="active">公司名稱</th>
+                                <th class="active">供應商名稱</th>
+                                <th class="active">電子信箱</th>
+                                <th class="active">手機</th>
 
-                                <th class="active">Action</th>
+                                <th class="active">動作</th>
 
                             </tr>
                             </thead><!-- / Table head -->
@@ -56,7 +56,7 @@
                             ?><!--get all sub category if not this empty-->
                             <?php else : ?> <!--get error message if this empty-->
                                 <td colspan="6">
-                                    <strong>There is no record for display</strong>
+                                    <strong>目前沒有任何紀錄可以顯示</strong>
                                 </td><!--/ get error message if this empty-->
                             <?php endif; ?>
                             </tbody><!-- / Table body -->

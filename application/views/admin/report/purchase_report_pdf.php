@@ -22,25 +22,25 @@ if(!empty($info->logo)){
 if(!empty($info->company_name)){
     $company_name = $info->company_name;
 }else{
-    $company_name = 'Your Company Name';
+    $company_name = '你的公司名稱';
 }
 //company phone
 if(!empty($info->phone)){
     $company_phone = $info->phone;
 }else{
-    $company_phone = 'Company Phone';
+    $company_phone = '公司電話';
 }
 //company email
 if(!empty($info->email)){
     $company_email = $info->email;
 }else{
-    $company_email = 'Company Email';
+    $company_email = '公司Email';
 }
 //company address
 if(!empty($info->address)){
     $address = $info->address;
 }else{
-    $address = 'Company Address';
+    $address = '公司地址';
 }
 
 ?>
@@ -331,7 +331,7 @@ table tfoot tr td:first-child {
 
 <main class="invoice_report">
 
-    <h4>Purchase Report from: <strong><?php echo $start_date ?></strong> to <strong><?php echo $end_date ?></strong></h4>
+    <h4>採購報告 從: <strong><?php echo $start_date ?></strong> 到 <strong><?php echo $end_date ?></strong></h4>
     <br/>
     <br/>
 
@@ -347,8 +347,8 @@ table tfoot tr td:first-child {
             <thead>
             <tr>
                 <th class="no text-right"> <strong>PUR-<?php echo $invoice_no  ?></strong></th>
-                <th class="no text-left">Supplier: <strong><?php echo $purchase[$key]->supplier_name  ?></strong></th>
-                <th class="desc">Invoice Date: <?php echo date('Y-m-d', strtotime($purchase[$key]->datetime)) ?></th>
+                <th class="no text-left">供應商: <strong><?php echo $purchase[$key]->supplier_name  ?></strong></th>
+                <th class="desc">報價單日期: <?php echo date('Y-m-d', strtotime($purchase[$key]->datetime)) ?></th>
             </tr>
             </thead>
         </table>
@@ -356,11 +356,11 @@ table tfoot tr td:first-child {
             <thead>
             <tr style="background-color: #ECECEC">
                 <th class="no text-right">#</th>
-                <th class="desc">Product Code</th>
-                <th class="desc">Description</th>
-                <th class="unit text-right">Buying Price</th>
-                <th class="qty text-right">Qty</th>
-                <th class="total text-right ">TOTAL</th>
+                <th class="desc">商品代碼</th>
+                <th class="desc">描述</th>
+                <th class="unit text-right">購入價格</th>
+                <th class="qty text-right">數量</th>
+                <th class="total text-right ">總計</th>
             </tr>
             </thead>
             <tbody>
@@ -372,7 +372,7 @@ table tfoot tr td:first-child {
                         if(!empty($v_order->product_code))  {
                             echo $v_order->product_code;
                         }else{
-                            echo 'custom Order';
+                            echo '特殊訂單';
                         }
                         ?></td>
                     <td class="desc"><h3><?php echo $v_order->product_name ?></h3></td>
@@ -393,7 +393,7 @@ table tfoot tr td:first-child {
             <tfoot>
             <tr>
                 <td colspan="3"></td>
-                <td colspan="2">Grand Total</td>
+                <td colspan="2">總計</td>
                 <td><?php echo $currency.' '.number_format( $purchase[$key]->grand_total,2) ?></td>
             </tr>
             </tfoot>

@@ -23,7 +23,7 @@ if(!empty($info->currency))
 
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
-                    <h3 class="box-title ">New Parchase</h3>
+                    <h3 class="box-title ">新增採購</h3>
                 </div>
                 <div class="box-body">
 
@@ -33,16 +33,16 @@ if(!empty($info->currency))
 
                             <div class="box box-warning">
                                 <div class="box-header box-header-background-light with-border">
-                                    <h3 class="box-title ">Select Product</h3>
+                                    <h3 class="box-title ">選擇商品</h3>
                                 </div>
 
 
                                 <div class="box-body">
 
                                     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                                        <li class="active"><a href="#product-list" data-toggle="tab">Product List</a>
+                                        <li class="active"><a href="#product-list" data-toggle="tab">商品列表</a>
                                         </li>
-                                        <li><a href="#add-product" data-toggle="tab">Add Product</a></li>
+                                        <li><a href="#add-product" data-toggle="tab">新增商品</a></li>
                                     </ul>
 
 
@@ -56,10 +56,10 @@ if(!empty($info->currency))
                                                 <thead ><!-- Table head -->
                                                 <tr>
                                                     <th class="active">Sl</th>
-                                                    <th class="active">Product Code</th>
-                                                    <th class="active">Product Name</th>
-                                                    <th class="active">Inventory</th>
-                                                    <th class="active">Purchase</th>
+                                                    <th class="active">商品代碼</th>
+                                                    <th class="active">商品名稱</th>
+                                                    <th class="active">庫存</th>
+                                                    <th class="active">採購</th>
 
                                                 </tr>
                                                 </thead><!-- / Table head -->
@@ -98,7 +98,7 @@ if(!empty($info->currency))
                                                     ?><!--get all sub category if not this empty-->
                                                 <?php else : ?> <!--get error message if this empty-->
                                                     <td colspan="6">
-                                                        <strong>There is no record for display</strong>
+                                                        <strong>目前沒有紀錄可以顯示</strong>
                                                     </td><!--/ get error message if this empty-->
                                                 <?php endif; ?>
 
@@ -112,17 +112,17 @@ if(!empty($info->currency))
                                         <div class="tab-pane" id="add-product">
                                             <form method="post" id="newform" action="<?php echo base_url(); ?>admin/purchase/add_new_product_to_cart">
                                                 <div class="form-group">
-                                                    <label>Product Name</label>
-                                                    <input class="form-control" placeholder="Product Name" type="text"
+                                                    <label>商品名稱 Product Name</label>
+                                                    <input class="form-control" placeholder="商品名稱 Product Name" type="text"
                                                            name="product_name">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Product Quantity</label>
-                                                    <input class="form-control" placeholder="Product Quantity"
+                                                    <label>數量 Product Quantity</label>
+                                                    <input class="form-control" placeholder="數量 Product Quantity"
                                                            type="text" name="qty">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Unit Price</label>
+                                                    <label>單價 Unit Price</label>
                                                     <div class="input-group">
                                                     <span class="input-group-addon">
                                                                                 <?php  if(!empty($info->currency))
@@ -133,13 +133,13 @@ if(!empty($info->currency))
                                                                                     echo '$';
                                                                                 } ?>
                                                                             </span>
-                                                    <input class="form-control" placeholder="Unit Price" type="text"
+                                                    <input class="form-control" placeholder="單價 Unit Price" type="text"
                                                            name="price">
                                                         </div>
                                                 </div>
 
 
-                                                    <button type="submit" class="btn bg-navy " type="submit">Add to Purchase
+                                                    <button type="submit" class="btn bg-navy " type="submit">新增至採購
                                                     </button>
 
 
@@ -160,7 +160,7 @@ if(!empty($info->currency))
                             <form method="post" action="<?php echo base_url() ?>admin/purchase/save_purchase">
                             <div class="box box-info">
                                 <div class="box-header box-header-background-light with-border">
-                                    <h3 class="box-title  ">Purchase Order</h3>
+                                    <h3 class="box-title  ">採購訂單</h3>
                                 </div>
 
                                 <div class="box-background">
@@ -169,10 +169,10 @@ if(!empty($info->currency))
 
                                     <div class="col-md-6">
 
-                                        <label>Supplier</label>
+                                        <label>供應商</label>
                                         <select class="form-control" name="supplier_id" required>
 
-                                            <option value="">Select Supplier</option>
+                                            <option value="">選擇供應商</option>
 
                                             <?php foreach($supplier as $v_supplier):?>
                                             <option value="<?php echo $v_supplier->supplier_id; ?>"><?php echo $v_supplier->company_name; ?></option>
@@ -180,7 +180,7 @@ if(!empty($info->currency))
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Date</label>
+                                        <label>日期</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control datepicker" name="purchase_date" data-format="yyyy/mm/dd" value="<?php echo date("Y/ m/ d");?>" disabled>
 
@@ -283,7 +283,7 @@ if(!empty($info->currency))
             messages: {
 
                 product_name: {
-                    required: "Please enter Product Name"
+                    required: "請輸入商品名稱"
                 }
 
 
