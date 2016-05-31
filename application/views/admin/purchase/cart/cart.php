@@ -2,11 +2,11 @@
     <thead ><!-- Table head -->
     <tr>
         <th class="active">Sl</th>
-        <th class="active col-sm-6">Product</th>
-        <th class="active ">Qty</th>
-        <th class="active ">Unit Price</th>
-        <th class="active">Total</th>
-        <th class="active">Action</th>
+        <th class="active col-sm-6">商品</th>
+        <th class="active ">數量</th>
+        <th class="active ">單價</th>
+        <th class="active">總計</th>
+        <th class="active">動作</th>
 
     </tr>
     </thead><!-- / Table head -->
@@ -50,7 +50,7 @@
         ?><!--get all sub category if not this empty-->
         <tr>
             <td colspan="3" class="text-right active">
-                <strong>Grand Total: </strong>
+                <strong>總計: </strong>
             </td>
             <td colspan="3" class="text-left active">
                <strong> <?php echo $this->cart->format_number($this->cart->total()); ?></strong>
@@ -59,7 +59,7 @@
 
         <tr>
             <td colspan="3" class="text-right active">
-                <strong>Purchase Reference</strong>
+                <strong>採購資訊</strong>
             </td>
             <td colspan="3" class="text-left active">
                 <input type="text" name="purchase_ref" class="form-control">
@@ -68,19 +68,19 @@
 
         <tr>
             <td colspan="3" class="text-right active">
-                <strong>Payment Method </strong>
+                <strong>付款方式 </strong>
             </td>
             <td colspan="3" class="text-left active">
                 <select name="payment_method" class="form-control" id="payment_type">
-                    <option value="cash">Cash Payment</option>
-                    <option value="cheque">Cheque Payment</option>
-                    <option value="card">Credit Card</option>
+                    <option value="cash">現金</option>
+                    <option value="cheque">支票</option>
+                    <option value="card">信用卡</option>
                 </select>
             </td>
         </tr>
        <tr class="" id="payment" style="display:none">
            <td colspan="3" class="text-right active">
-               <strong>Payment Reference(cheque/card)</strong>
+               <strong>付款資訊(支票/信用卡)</strong>
            </td>
            <td colspan="3" class="text-left active">
               <input type="text" name="payment_ref" class="form-control" >
@@ -92,14 +92,14 @@
 
             </td>
             <td colspan="3" class="text-left active">
-                <button type="submit" id="btn_purchase" class="btn bg-navy btn-block " type="submit">Purchase
+                <button type="submit" id="btn_purchase" class="btn bg-navy btn-block " type="submit">送出採購
                 </button>
             </td>
         </tr>
 
     <?php else : ?> <!--get error message if this empty-->
         <td colspan="6">
-            <strong>There is no record for display</strong>
+            <strong>目前沒有任何紀錄顯示</strong>
         </td><!--/ get error message if this empty-->
     <?php endif; ?>
     </tbody><!-- / Table body -->

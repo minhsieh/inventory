@@ -21,25 +21,25 @@ if(!empty($info->logo)){
 if(!empty($info->company_name)){
     $company_name = $info->company_name;
 }else{
-    $company_name = 'Your Company Name';
+    $company_name = '你的公司名稱';
 }
 //company phone
 if(!empty($info->phone)){
     $company_phone = $info->phone;
 }else{
-    $company_phone = 'Company Phone';
+    $company_phone = '公司電話';
 }
 //company email
 if(!empty($info->email)){
     $company_email = $info->email;
 }else{
-    $company_email = 'Company Email';
+    $company_email = '公司Email';
 }
 //company address
 if(!empty($info->address)){
     $address = $info->address;
 }else{
-    $address = 'Company Address';
+    $address = '公司地址';
 }
 
 
@@ -59,7 +59,7 @@ if(!empty($info->address)){
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Sales Report</h3>
+                        <h3 class="box-title ">銷售報告</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -75,7 +75,7 @@ if(!empty($info->address)){
 
 
                                     <div class="form-group">
-                                        <label class="control-label">Start Date<span class="required"> *</span></label>
+                                        <label class="control-label">開始日期<span class="required"> *</span></label>
 
                                         <div class="input-group">
                                             <input type="text" value="" class="form-control datepicker" name="start_date" data-format="yyyy/mm/dd" required>
@@ -87,7 +87,7 @@ if(!empty($info->address)){
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label">End Date<span class="required"> *</span></label>
+                                        <label class="control-label">結束日期<span class="required"> *</span></label>
                                         <div class="input-group">
                                             <input type="text" value="" class="form-control datepicker" name="end_date" data-format="yyyy/mm/dd" required>
 
@@ -97,7 +97,7 @@ if(!empty($info->address)){
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn bg-navy" type="submit">Generate Report
+                                    <button type="submit" class="btn bg-navy" type="submit">產生報告
                                     </button><br/><br/>
                                 </div>
                                 <!-- /.box-body -->
@@ -115,7 +115,7 @@ if(!empty($info->address)){
                         <div class="col-md-8 col-md-offset-2">
                             <form method="post" action="<?php echo base_url(); ?>admin/report/pdf_sales_report">
                             <div class="btn-group pull-right">
-                                <a onclick="print_invoice('printableArea')" class="btn btn-primary">Print</a>
+                                <a onclick="print_invoice('printableArea')" class="btn btn-primary">列印</a>
 
                                 <button type="submit" class="btn bg-navy">
                                     PDF
@@ -155,7 +155,7 @@ if(!empty($info->address)){
 
                                 <main class="invoice_report">
 
-                                    <h4>Sales Report from: <strong><?php echo $start_date ?></strong> to <strong><?php echo $end_date ?></strong></h4>
+                                    <h4>銷售報告 從: <strong><?php echo $start_date ?></strong> 到 <strong><?php echo $end_date ?></strong></h4>
                                     <br/>
                                     <br/>
 
@@ -170,8 +170,8 @@ if(!empty($info->address)){
                                     <table>
                                         <thead>
                                         <tr>
-                                            <th class="no text-right">INVOICE <?php echo $invoice_no  ?></th>
-                                            <th class="desc">Invoice Date: <?php echo date('Y-m-d', strtotime($order[$key]->invoice_date)) ?></th>
+                                            <th class="no text-right">報價單 <?php echo $invoice_no  ?></th>
+                                            <th class="desc">報價單日期: <?php echo date('Y-m-d', strtotime($order[$key]->invoice_date)) ?></th>
                                         </tr>
                                         </thead>
                                     </table>
@@ -179,12 +179,12 @@ if(!empty($info->address)){
                                         <thead>
                                         <tr style="background-color: #ECECEC">
                                             <th class="no text-right">#</th>
-                                            <th class="desc">Description</th>
-                                            <th class="unit text-right">Buying Price</th>
-                                            <th class="unit text-right">Selling Price</th>
-                                            <th class="qty text-right">Qty</th>
-                                            <th class="qty text-right">Tax</th>
-                                            <th class="total text-right ">TOTAL</th>
+                                            <th class="desc">敘述</th>
+                                            <th class="unit text-right">買入價格</th>
+                                            <th class="unit text-right">賣出價格</th>
+                                            <th class="qty text-right">數量</th>
+                                            <th class="qty text-right">稅</th>
+                                            <th class="total text-right ">總計</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -215,19 +215,19 @@ if(!empty($info->address)){
                                         <?php if($order[$key]->discount_amount !=0): ?>
                                             <tr>
                                                 <td colspan="4"></td>
-                                                <td colspan="2">Discount Amount</td>
+                                                <td colspan="2">折扣價格</td>
                                                 <td><?php echo number_format($order[$key]->discount_amount,2) ?></td>
                                             </tr>
                                         <?php endif; ?>
 
                                         <tr>
                                             <td colspan="4"></td>
-                                            <td colspan="2">Grand Total</td>
+                                            <td colspan="2">總計</td>
                                             <td><?php echo $currency.' '.number_format($order[$key]->grand_total ,2) ?></td>
                                         </tr>
                                         <tr>
                                             <td colspan="4"></td>
-                                            <td colspan="2">Profit</td>
+                                            <td colspan="2">獲利</td>
                                             <td><?php echo $currency.' '.number_format( $order[$key]->grand_total - $total_buying_price,2) ?></td>
                                         </tr>
                                         </tfoot>
@@ -244,9 +244,9 @@ if(!empty($info->address)){
                                     <table>
                                         <thead>
                                         <tr style="background-color: #ccc">
-                                            <th class="no text-right">Total Cost</th>
-                                            <th class="no text-right">Total Sell</th>
-                                            <th class="no text-right">Total Profit</th>
+                                            <th class="no text-right">總成本</th>
+                                            <th class="no text-right">總銷售</th>
+                                            <th class="no text-right">總獲利</th>
                                         </tr>
                                         </thead>
                                         <tbody style="background-color: #c5c5c5">
@@ -257,7 +257,7 @@ if(!empty($info->address)){
                                     </table>
 
                                     <?php else: ?>
-                                    <strong>There is no record for display</strong>
+                                    <strong>目前沒有任何紀錄顯示</strong>
                                     <?php endif ?>
 
 

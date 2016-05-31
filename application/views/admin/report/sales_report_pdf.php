@@ -21,25 +21,25 @@ if(!empty($info->logo)){
 if(!empty($info->company_name)){
     $company_name = $info->company_name;
 }else{
-    $company_name = 'Your Company Name';
+    $company_name = '你的公司名稱';
 }
 //company phone
 if(!empty($info->phone)){
     $company_phone = $info->phone;
 }else{
-    $company_phone = 'Company Phone';
+    $company_phone = '公司電話';
 }
 //company email
 if(!empty($info->email)){
     $company_email = $info->email;
 }else{
-    $company_email = 'Company Email';
+    $company_email = '公司Email';
 }
 //company address
 if(!empty($info->address)){
     $address = $info->address;
 }else{
-    $address = 'Company Address';
+    $address = '公司地址';
 }
 
 
@@ -331,7 +331,7 @@ table tfoot tr td:first-child {
 
 <main class="invoice_report">
 
-    <h4>Sales Report from: <strong><?php echo $start_date ?></strong> to <strong><?php echo $end_date ?></strong></h4>
+    <h4>銷售報告 從: <strong><?php echo $start_date ?></strong> 到 <strong><?php echo $end_date ?></strong></h4>
     <br/>
     <br/>
 
@@ -346,8 +346,8 @@ table tfoot tr td:first-child {
         <table>
             <thead>
             <tr>
-                <th class="no text-right">INVOICE <?php echo $invoice_no  ?></th>
-                <th class="desc">Invoice Date: <?php echo date('Y-m-d', strtotime($order[$key]->invoice_date )) ?></th>
+                <th class="no text-right">報價單 <?php echo $invoice_no  ?></th>
+                <th class="desc">報價單日期: <?php echo date('Y-m-d', strtotime($order[$key]->invoice_date )) ?></th>
             </tr>
             </thead>
         </table>
@@ -355,12 +355,12 @@ table tfoot tr td:first-child {
             <thead>
             <tr style="background-color: #ECECEC">
                 <th class="no text-right">#</th>
-                <th class="desc">Description</th>
-                <th class="unit text-right">Buying Price</th>
-                <th class="unit text-right">Selling Price</th>
-                <th class="qty text-right">Qty</th>
-                <th class="qty text-right">Tax</th>
-                <th class="total text-right ">TOTAL</th>
+                <th class="desc">描述</th>
+                <th class="unit text-right">買入價格</th>
+                <th class="unit text-right">賣出價格</th>
+                <th class="qty text-right">數量</th>
+                <th class="qty text-right">稅</th>
+                <th class="total text-right ">總計</th>
             </tr>
             </thead>
             <tbody>
@@ -391,19 +391,19 @@ table tfoot tr td:first-child {
             <?php if($order[$key]->discount_amount !=0): ?>
                 <tr>
                     <td colspan="4"></td>
-                    <td class="total" colspan="2">Discount Amount</td>
+                    <td class="total" colspan="2">折扣價格</td>
                     <td class="total"><?php echo number_format($order[$key]->discount_amount,2) ?></td>
                 </tr>
             <?php endif; ?>
 
             <tr>
                 <td colspan="4"></td>
-                <td class="total" colspan="2">Grand Total</td>
+                <td class="total" colspan="2">總計</td>
                 <td class="total"><?php echo $currency.' '.number_format($order[$key]->grand_total ,2) ?></td>
             </tr>
             <tr>
                 <td colspan="4"></td>
-                <td class="total" colspan="2">Profit</td>
+                <td class="total" colspan="2">獲利</td>
                 <td class="total"><?php echo $currency.' '.number_format( $order[$key]->grand_total - $total_buying_price,2) ?></td>
             </tr>
             </tfoot>
@@ -419,18 +419,18 @@ table tfoot tr td:first-child {
     <?php if(!empty($invoice_details)) :?>
 
     <?php else: ?>
-        <strong>There is no record for display</strong>
+        <strong>目前沒有任何紀錄顯示</strong>
     <?php endif ?>
 
     <div class="section group" style="background-color: #ccc">
         <div class="col span_1_of_4">
-            Total Cost
+            總成本
         </div>
         <div class="col span_1_of_4 " >
-            Total Sell
+            總銷售
         </div>
         <div class="col span_1_of_4" style="margin-top: -5px">
-            Total Profit
+            總獲利
         </div>
 
     </div>
