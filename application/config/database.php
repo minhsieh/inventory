@@ -35,12 +35,12 @@
 */
 
 // The following values will probably need to be changed.
-$db['default']['username'] = "";
-$db['default']['password'] = "";
-$db['default']['database'] = "";
+$db['default']['username'] = "inventory";
+$db['default']['password'] = "inventory1234";
+$db['default']['database'] = "inventory";
 
 // The following values can probably stay the same.
-$db['default']['hostname'] = "";
+$db['default']['hostname'] = "localhost";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
