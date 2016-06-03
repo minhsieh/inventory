@@ -10,7 +10,7 @@ if(!empty($info->currency))
 ?>
         <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url(); ?>" class="logo"><b>Easy</b>Inventory</a>
+        <a href="<?php echo base_url(); ?>" class="logo"><b>倉儲貨物</b>管理</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
