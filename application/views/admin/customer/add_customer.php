@@ -30,7 +30,7 @@
                                 <!-- /.customer Code -->
                                 <?php if (!empty($customer->customer_code)) {?>
                                     <div class="form-group">
-                                        <label>Customer Id</label>
+                                        <label>客戶ID</label>
                                         <input type="text"
                                                value="<?php echo $customer->customer_code ?>"
                                                class="form-control" disabled>
@@ -38,7 +38,7 @@
                                 <?php }else { ?>
 
                                     <div class="form-group">
-                                        <label>Customer Id<span class="required">*</span></label>
+                                        <label>客戶ID<span class="required">*</span></label>
                                         <input type="text"
                                                value="<?php echo $code ?>"
                                                class="form-control" disabled>
@@ -48,8 +48,8 @@
 
                                 <!-- /.customer Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Customer Name <span class="required">*</span></label>
-                                    <input type="text" name="customer_name" placeholder="Customer Name"
+                                    <label for="exampleInputEmail1">客戶名稱<span class="required">*</span></label>
+                                    <input type="text" name="customer_name" placeholder="客戶名稱"
                                            value="<?php
                                            if (!empty($customer->customer_name)) {
                                                echo $customer->customer_name;
@@ -73,8 +73,8 @@
 
                                 <!-- /.Phone -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Phone</label>
-                                    <input type="text" placeholder="Phone" name="phone" onchange="check_phone(this.value)"
+                                    <label for="exampleInputEmail1">電話</label>
+                                    <input type="text" placeholder="電話" name="phone" onchange="check_phone(this.value)"
                                            value="<?php
                                            if (!empty($customer->phone)) {
                                                echo $customer->phone;
@@ -86,8 +86,8 @@
 
                                 <!-- /.Discount -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Discount %</label>
-                                    <input type="text" placeholder="Discount" name="discount"
+                                    <label for="exampleInputEmail1">折扣 %</label>
+                                    <input type="text" placeholder="折扣" name="discount"
                                            value="<?php
                                            if (!empty($customer->discount)) {
                                                echo $customer->discount;
@@ -98,9 +98,9 @@
 
                                 <!-- /.Address -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Address <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">地址 <span class="required">*</span></label>
                                     <textarea name="address" class="form-control autogrow" id="ck_editor"
-                                              placeholder="Address"><?php
+                                              placeholder="地址"><?php
                                         if (!empty($customer->address)) {
                                             echo $customer->address;
                                         }
@@ -126,7 +126,7 @@
                     } ?>" id="customer_id">
 
                     <div class="box-footer">
-                        <button type="submit" id="customer_btn" class="btn bg-navy col-md-offset-3" type="submit">Add Supplier
+                        <button type="submit" id="customer_btn" class="btn bg-navy col-md-offset-3" type="submit">儲存
                         </button>
                     </div>
                 </form>

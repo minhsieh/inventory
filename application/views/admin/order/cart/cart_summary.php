@@ -16,7 +16,7 @@ if(!empty($info->currency))
 
 
                 <div class="form-group">
-                    <label class="col-sm-5 control-label">Order No.</label>
+                    <label class="col-sm-5 control-label">訂單編號 No.</label>
 
                     <div class="col-sm-7">
                         <input type="text" value="<?php echo $this->session->userdata('order_no'); ?>" disabled class="form-control ">
@@ -37,9 +37,9 @@ if(!empty($info->currency))
             <form method="post" action="<?php echo base_url(); ?>admin/order/new_order">
                 <div class="input-group">
                       <span class="input-group-btn">
-                        <button type="submit" class="btn bg-blue" type="button" data-placement="top" data-toggle="tooltip" data-original-title="Search Customer by ID/Number">Search</button>
+                        <button type="submit" class="btn bg-blue" type="button" data-placement="top" data-toggle="tooltip" data-original-title="使用ID/編號來搜尋客戶">搜尋</button>
                       </span>
-                    <input type="text" name="customer" class="form-control" placeholder="Customer" >
+                    <input type="text" name="customer" class="form-control" placeholder="客戶" >
                     <input type="hidden" name="flag" value="customer">
                 </div>
             </form>
@@ -49,9 +49,9 @@ if(!empty($info->currency))
         <div class="col-md-6">
             <form method="post" action="<?php echo base_url(); ?>admin/order/new_order">
                 <div class="input-group">
-                    <input type="text" class="form-control" value="<?php echo $this->session->userdata('customer_name'); ?>" placeholder="Walking Client">
+                    <input type="text" class="form-control" value="<?php echo $this->session->userdata('customer_name'); ?>" placeholder="移動中客戶">
                     <span class="input-group-btn">
-                            <button type="submit" class="btn btn-danger" type="button" data-placement="top" data-toggle="tooltip" data-original-title="Remove Customer"><i class="glyphicon glyphicon-remove-circle"></i></button>
+                            <button type="submit" class="btn btn-danger" type="button" data-placement="top" data-toggle="tooltip" data-original-title="移除客戶"><i class="glyphicon glyphicon-remove-circle"></i></button>
                     </span>
                 </div>
                 <input type="hidden" name="remove_flag" value="customer">
@@ -70,7 +70,7 @@ if(!empty($info->currency))
 
 
                        <div class="form-group">
-                            <label class="col-sm-5 control-label">Sub Tota</label>
+                            <label class="col-sm-5 control-label">小計</label>
 
                             <div class="col-sm-7">
                                 <input type="text" value="<?php
@@ -88,7 +88,7 @@ if(!empty($info->currency))
                         <?php endforeach; endif ?>
 
                         <div class="form-group">
-                            <label class="col-sm-5 control-label">Tax</label>
+                            <label class="col-sm-5 control-label">稅</label>
 
                             <div class="col-sm-7">
                                 <input type="text" value="<?php
@@ -102,7 +102,7 @@ if(!empty($info->currency))
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-5 control-label">Discount</label>
+                            <label class="col-sm-5 control-label">折扣</label>
 
                             <div class="col-sm-7">
                                 <?php
@@ -114,7 +114,7 @@ if(!empty($info->currency))
                         </div>
                     <?php if(!empty($discount)): ?>
                         <div class="form-group">
-                            <label class="col-sm-5 control-label">Discount Ammount</label>
+                            <label class="col-sm-5 control-label">折扣金額</label>
 
                             <div class="col-sm-7">
                                 <?php
@@ -146,7 +146,7 @@ if(!empty($info->currency))
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label class="col-sm-5 control-label" style="padding-top: 25px">Grand Total :</label>
+                        <label class="col-sm-5 control-label" style="padding-top: 25px">總計 :</label>
                             <?php $cart_total = $this->cart->total();
                             if(!empty($discount)){
                                 $grand_total = $cart_total + $total_tax - $discount_amount;
@@ -174,14 +174,14 @@ if(!empty($info->currency))
                     <div class="col-md-12">
 
                         <div class="form-group">
-                            <label class="col-sm-5 control-label">Payment Method</label>
+                            <label class="col-sm-5 control-label">付款方式</label>
 
                             <div class="col-sm-7">
                                 <select name="payment_method" class="form-control" id="order_payment_type">
-                                    <option value="cash">Cash Payment</option>
-                                    <option value="cheque">Cheque Payment</option>
-                                    <option value="card">Credit Card</option>
-                                    <option value="pending">Pending Order</option>
+                                    <option value="cash">現金付款</option>
+                                    <option value="cheque">支票/轉帳付款</option>
+                                    <option value="card">信用卡</option>
+                                    <option value="pending">尚未確認訂單</option>
                                 </select>
                             </div>
                         </div>
@@ -190,7 +190,7 @@ if(!empty($info->currency))
                     <div class="col-md-12" style="display: none" id="payment">
 
                         <div class="form-group">
-                            <label class="col-sm-5 control-label">cheque/card Ref.</label>
+                            <label class="col-sm-5 control-label">信用卡/支票/轉帳 資訊</label>
 
                             <div class="col-sm-7">
                                 <input class="form-control" name="payment_ref">
@@ -200,16 +200,16 @@ if(!empty($info->currency))
 
                     <div class="col-md-12 order-panel"  id="shipping">
                             <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                                <li class="active"><a href="#note" data-toggle="tab">Order Note</a>
+                                <li class="active"><a href="#note" data-toggle="tab">訂單註解</a>
                                 </li>
-                                <li><a href="#shipping_address" data-toggle="tab">Shipping</a></li>
+                                <li><a href="#shipping_address" data-toggle="tab">運送</a></li>
                             </ul>
                         <div id="my-tab-content" class="tab-content">
 
                             <!-- ***************  Cart Tab Start ****************** -->
                                 <div class="tab-pane active" id="note">
                                     <div class="form-group">
-                                        <label>Order Note</label>
+                                        <label>訂單註解</label>
                                         <textarea class="form-control" name="note" rows="3" placeholder="Enter ..." id="ck_editor"></textarea>
                                         <?php
                                         if(!empty($editor['ckeditor']))
@@ -219,7 +219,7 @@ if(!empty($info->currency))
 
                             <div class="tab-pane" id="shipping_address">
                                 <div class="form-group">
-                                    <label>Shipping Address</label>
+                                    <label>運送地址</label>
                                     <textarea class="form-control" rows="3" name="shipping_address" placeholder="Enter ..." id="ck_editor2"></textarea>
                                     <?php echo display_ckeditor($editor2['ckeditor2']); ?>
                                 </div>
@@ -235,7 +235,7 @@ if(!empty($info->currency))
         <div class="box-body">
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" id="btn_order" class="btn bg-navy btn-block " type="submit" <?php echo !empty($cart)?'':'disabled' ?>>Submit Order
+                    <button type="submit" id="btn_order" class="btn bg-navy btn-block " type="submit" <?php echo !empty($cart)?'':'disabled' ?>>送出訂單
                     </button>
                 </div>
             </div>

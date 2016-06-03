@@ -15,7 +15,7 @@
 
         <div class="box box-primary">
             <div class="box-header box-header-background with-border">
-                <h3 class="box-title ">Place New Order</h3>
+                <h3 class="box-title ">開啟一張新訂單</h3>
             </div>
             <div class="box-body">
 
@@ -25,16 +25,16 @@
 
                         <div class="box  box-warning">
                             <div class="box-header box-header-background-light with-border">
-                                <h3 class="box-title ">Select Product</h3>
+                                <h3 class="box-title ">請選擇商品</h3>
                             </div>
 
 
                             <div class="box-body order-panel">
 
                                 <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                                    <li class="active"><a href="#product-list" data-toggle="tab">Shopping Cart</a>
+                                    <li class="active"><a href="#product-list" data-toggle="tab">購物車</a>
                                     </li>
-                                    <li><a href="#search-product" data-toggle="tab">Search Product</a></li>
+                                    <li><a href="#search-product" data-toggle="tab">搜尋商品</a></li>
                                 </ul>
 
 
@@ -53,7 +53,7 @@
                                                           <span class="input-group-btn">
                                                             <button type="submit" class="btn bg-blue" type="button">Barcode</button>
                                                           </span>
-                                                        <input type="text" name="barcode" class="form-control" placeholder="Scan Product Barcode">
+                                                        <input type="text" name="barcode" class="form-control" placeholder="在此掃描條碼">
                                                     </div>
 
                                                 </form>
@@ -79,7 +79,7 @@
                                         <div class="row">
                                             <div class="col-md-3 col-md-offset-9" style="position: absolute; padding-top: 10px" >
                                                 <button type="submit" class="btn btn-block btn-social btn-bitbucket">
-                                                    <i class="glyphicon glyphicon-shopping-cart"></i> Add to Cart
+                                                    <i class="glyphicon glyphicon-shopping-cart"></i> 新增至購物車
                                                 </button>
                                             </div>
                                         </div>
@@ -89,10 +89,10 @@
                                             <thead><!-- Table head -->
                                             <tr>
                                                 <th class="col-sm-1 active" style="width: 21px"><input type="checkbox" class="checkbox-inline" id="parent_present" /></th>
-                                                <th class="active">Barcode</th>
-                                                <th class="active">Product Name</th>
-                                                <th class="active">Inventory</th>
-                                                <th class="active col-md-1">Purchase</th>
+                                                <th class="active">條碼</th>
+                                                <th class="active">商品名稱</th>
+                                                <th class="active">庫存</th>
+                                                <th class="active col-md-1">採購</th>
 
                                             </tr>
                                             </thead>
@@ -123,7 +123,7 @@
 
                                                             <input type="hidden" name="product_id"
                                                                    value="<?php echo $v_product->product_code ?>">
-                                                        <a href="<?php echo base_url()?>admin/order/add_cart_item/<?php echo $v_product->product_code ?>" data-original-title="Add to Cart" class="btn btn-primary btn-xs" title="" data-toggle="tooltip" data-placement="top">
+                                                        <a href="<?php echo base_url()?>admin/order/add_cart_item/<?php echo $v_product->product_code ?>" data-original-title="新增至購物車" class="btn btn-primary btn-xs" title="" data-toggle="tooltip" data-placement="top">
                                                             <i class="fa fa-shopping-cart"></i></a>
 
 
@@ -137,7 +137,7 @@
                                                 ?><!--get all sub category if not this empty-->
                                             <?php else : ?> <!--get error message if this empty-->
                                                 <td colspan="6">
-                                                    <strong>There is no record for display</strong>
+                                                    <strong>目前沒有資料顯示</strong>
                                                 </td><!--/ get error message if this empty-->
                                             <?php endif; ?>
 
@@ -165,7 +165,7 @@
 
                             <div class="box">
                                 <div class="box-header with-border box-header-background">
-                                    <h3 class="box-title ">Order Summary</h3>
+                                    <h3 class="box-title ">訂單總數</h3>
                                 </div>
 
                                 <div id="cart_summary">
@@ -260,10 +260,10 @@ if( !empty($cart_msg))
         // options
         <?php if($cart_msg == 'add'){ ?>
         icon: 'glyphicon glyphicon-ok-sign',
-        message: '  Product add to cart successfully!'
+        message: ' 商品成功新增至購物車'
         <?php }else{ ?>
         icon: 'glyphicon glyphicon-ok-sign',
-        message: '  Delete from cart successfully!'
+        message: ' 從購物車移除成功'
         <?php } ?>
     },{
         // settings

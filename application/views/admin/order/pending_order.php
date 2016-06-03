@@ -20,7 +20,7 @@ if(!empty($info->currency))
 
             <div class="box box-primary ">
                 <div class="box-header box-header-background with-border">
-                        <h3 class="box-title ">Pending Order</h3>
+                        <h3 class="box-title ">尚未確認訂單</h3>
                 </div>
 
 
@@ -31,12 +31,12 @@ if(!empty($info->currency))
                             <thead ><!-- Table head -->
                             <tr>
                                 <th class="active">Sl</th>
-                                <th class="active">Order No</th>
-                                <th class="active">Order Date</th>
-                                <th class="active">Order Status</th>
-                                <th class="active">Order Total</th>
-                                <th class="active">Sales By</th>
-                                <th class="active">Action</th>
+                                <th class="active">訂單編號 No</th>
+                                <th class="active">訂單日期</th>
+                                <th class="active">訂單狀態</th>
+                                <th class="active">訂單總計</th>
+                                <th class="active">銷售人</th>
+                                <th class="active">動作</th>
 
                             </tr>
                             </thead><!-- / Table head -->
@@ -49,16 +49,16 @@ if(!empty($info->currency))
                                     <td class="vertical-td">
                                         <?php echo  $counter ?>
                                     </td>
-                                    <td class="vertical-td">OR<?php echo $v_order->order_no ?></td>
+                                    <td class="vertical-td">或<?php echo $v_order->order_no ?></td>
                                     <td class="vertical-td"><?php echo date('Y-m-d', strtotime($v_order->order_date ))?></td>
                                     <td class="vertical-td">
                                         <?php
                                           if($v_order->order_status == 0){
-                                              echo 'Pending Order';
+                                              echo '尚未確認';
                                           }elseif($v_order->order_status == 1){
-                                              echo 'Cancel Order';
+                                              echo '已取消';
                                         }else{
-                                            echo 'Confirm Order';
+                                            echo '已確認';
                                         }
                                         ?>
                                     </td>
@@ -77,7 +77,7 @@ if(!empty($info->currency))
                             ?><!--get all sub category if not this empty-->
                             <?php else : ?> <!--get error message if this empty-->
                                 <td colspan="6">
-                                    <strong>There is no record for display</strong>
+                                    <strong>目前沒有資料顯示</strong>
                                 </td><!--/ get error message if this empty-->
                             <?php endif; ?>
                             </tbody><!-- / Table body -->

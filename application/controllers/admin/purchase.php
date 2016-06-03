@@ -54,7 +54,7 @@ class Purchase extends Admin_Controller
         }
 
         // view page
-        $data['title'] = 'Add New Supplier';
+        $data['title'] = '新增供應商';
         $data['editor'] = $this->data;
         $data['subview'] = $this->load->view('admin/purchase/add_supplier', $data, true);
         $this->load->view('admin/_layout_main', $data);
@@ -78,7 +78,7 @@ class Purchase extends Admin_Controller
         $this->tbl_supplier('supplier_id', 'desc');
         $data['supplier'] = $this->global_model->get();
             // view page
-        $data['title'] = 'Add New Supplier';
+        $data['title'] = '新增供應商';
         $data['subview'] = $this->load->view('admin/purchase/manage_supplier', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -104,7 +104,7 @@ class Purchase extends Admin_Controller
         $data['supplier'] = $this->global_model->get();
 
         // view page
-        $data['title'] = 'Add New Supplier';
+        $data['title'] = '新增供應商';
         $data['subview'] = $this->load->view('admin/purchase/purchase', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -260,7 +260,7 @@ class Purchase extends Admin_Controller
         $this->tbl_purchase_product('purchase_product_id');
         $data['product'] = $this->global_model->get_by(array('purchase_id'=>$id), false);
 
-        $data['title'] = 'Purchase Invoice';
+        $data['title'] = '採購報價單';
         $data['subview'] = $this->load->view('admin/purchase/purchase_invoice', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -291,7 +291,7 @@ class Purchase extends Admin_Controller
         $this->tbl_purchase('purchase_id', 'desc');
         $data['purchase'] = $this->global_model->get();
 
-        $data['title'] = 'Purchase History';
+        $data['title'] = '採購歷史紀錄';
         $data['subview'] = $this->load->view('admin/purchase/purchase_list', $data, true);
         $this->load->view('admin/_layout_main', $data);
 
@@ -313,7 +313,7 @@ class Purchase extends Admin_Controller
         $this->tbl_purchase('purchase_id');
         $data['purchase'] = $this->global_model->get_by(array('supplier_id' => $id), false);
 
-        $data['title'] = 'Supplier History';
+        $data['title'] = '供應商歷史紀錄';
         $data['subview'] = $this->load->view('admin/purchase/supplier_history', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }

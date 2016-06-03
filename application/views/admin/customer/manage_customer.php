@@ -21,12 +21,12 @@
                             <thead ><!-- Table head -->
                             <tr>
                                 <th class="active">Sl</th>
-                                <th class="active">Customer Code</th>
-                                <th class="active">Customer Name</th>
+                                <th class="active">客戶ID</th>
+                                <th class="active">客戶名稱</th>
                                 <th class="active">Email</th>
-                                <th class="active">Phone</th>
-                                <th class="active">Discount</th>
-                                <th class="active">Action</th>
+                                <th class="active">電話</th>
+                                <th class="active">折扣 %</th>
+                                <th class="active">動作</th>
 
                             </tr>
                             </thead><!-- / Table head -->
@@ -55,7 +55,7 @@
                             ?><!--get all sub category if not this empty-->
                             <?php else : ?> <!--get error message if this empty-->
                                 <td colspan="7">
-                                    <strong>There is no record for display</strong>
+                                    <strong>目前沒有資料顯示</strong>
                                 </td><!--/ get error message if this empty-->
                             <?php endif; ?>
                             </tbody><!-- / Table body -->

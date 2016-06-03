@@ -20,9 +20,9 @@ if(!empty($info->currency))
 
             <div class="box box-primary ">
                 <div class="box-header box-header-background with-border">
-                        <h3 class="box-title ">Manage Order</h3>
+                        <h3 class="box-title ">管理訂單</h3>
                     <div class="box-tools">
-                        <a onclick="print_invoice('printableArea')" class="btn btn-default">Print</a>
+                        <a onclick="print_invoice('printableArea')" class="btn btn-default">列印</a>
 
                     </div>
                 </div>
@@ -38,12 +38,12 @@ if(!empty($info->currency))
                             <thead ><!-- Table head -->
                             <tr>
                                 <th class="active">Sl</th>
-                                <th class="active">Order No</th>
-                                <th class="active">Order Date</th>
-                                <th class="active">Order Status</th>
-                                <th class="active">Order Total</th>
-                                <th class="active">Sales By</th>
-                                <th class="active">Action</th>
+                                <th class="active">訂單編號</th>
+                                <th class="active">訂單日期</th>
+                                <th class="active">訂單狀態</th>
+                                <th class="active">訂單總計</th>
+                                <th class="active">銷售人</th>
+                                <th class="active">動作</th>
 
                             </tr>
                             </thead><!-- / Table head -->
@@ -82,7 +82,7 @@ if(!empty($info->currency))
                             ?><!--get all sub category if not this empty-->
                             <?php else : ?> <!--get error message if this empty-->
                                 <td colspan="6">
-                                    <strong>There is no record for display</strong>
+                                    <strong>目前沒有資料顯示</strong>
                                 </td><!--/ get error message if this empty-->
                             <?php endif; ?>
                             </tbody><!-- / Table body -->

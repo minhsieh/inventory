@@ -21,7 +21,7 @@ class Navigation extends MY_Controller {
     
     public function index(){
         $data['menu'] = array("navigation_manager" => 1, "manage_navigation" => 1);
-        $data['title'] = "Manage Navigation";      
+        $data['title'] = "管理導覽列";      
         
         $this->navigation_model->_table_name = "tbl_menu"; //table name
         $this->navigation_model->_order_by = "menu_id";
@@ -35,7 +35,7 @@ class Navigation extends MY_Controller {
      * Add New Navigation
      */
     public function add_navigation($id=NULL){
-        $data['title'] = "Add New Navigation";      
+        $data['title'] = "新增導覽項目";      
         $this->navigation_model->_table_name = "tbl_menu"; //table name
         $this->navigation_model->_order_by = "menu_id";
         if($id){

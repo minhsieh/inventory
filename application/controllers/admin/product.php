@@ -51,7 +51,7 @@ class Product extends Admin_Controller
         }
 
         //view page
-        $data['title'] = 'Create Category';
+        $data['title'] = '建立分類';
         $data['subview'] = $this->load->view('admin/product/category', $data, true); // sub view
         $this->load->view('admin/_layout_main', $data); // main page
     }
@@ -134,7 +134,7 @@ class Product extends Admin_Controller
         $data['all_sub_category'] = $this->product_model->get_all_sub_category();
         // view page
 
-        $data['title'] = 'Product Sub Category';
+        $data['title'] = '商品子分類';
         $data['subview'] = $this->load->view('admin/product/subcategory', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -275,7 +275,7 @@ class Product extends Admin_Controller
         $data['attribute_set'] = $this->global_model->get();
 
         // view page
-        $data['title'] = 'Add Product';
+        $data['title'] = '新增商品';
 
         $data['editor'] = $this->data; //get ck editor
         $data['subview'] = $this->load->view('admin/product/add_product', $data, true);
@@ -518,7 +518,7 @@ class Product extends Admin_Controller
 
         $data['product'] = $this->product_model->get_all_product_info();
 
-        $data['title'] = 'Manage Product';
+        $data['title'] = '管理商品';
         $data['subview'] = $this->load->view('admin/product/manage_product', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -538,7 +538,7 @@ class Product extends Admin_Controller
         $this->tbl_product_tag('product_tag_id');
         $data['product_tags'] = $this->global_model->get_by(array('product_id' => $id), false);
 
-        $data['title'] = 'View Product';
+        $data['title'] = '查看商品';
         $data['product_id'] = $id;
         $data['modal_subview'] = $this->load->view('admin/product/_modal_view_product', $data, FALSE);
         $this->load->view('admin/_layout_modal', $data);
@@ -552,7 +552,7 @@ class Product extends Admin_Controller
 
 
 
-        $data['title'] = 'Damage Product';
+        $data['title'] = '壞損商品';
         $data['subview'] = $this->load->view('admin/product/damage_product', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -563,7 +563,7 @@ class Product extends Admin_Controller
         $this->tbl_product('product_id');
         $data['product'] = $this->global_model->get();
 
-        $data['title'] = 'Add Damage Product';
+        $data['title'] = '新增壞損商品';
         $data['subview'] = $this->load->view('admin/product/add_damage_product', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -769,7 +769,7 @@ class Product extends Admin_Controller
         $this->tbl_product('product_id');
         $data['product'] = $this->global_model->get();
 
-        $data['title'] = 'Add Damage Product';
+        $data['title'] = '新增壞損商品';
         $data['subview'] = $this->load->view('admin/product/print_barcode', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -863,7 +863,7 @@ class Product extends Admin_Controller
 
         $data['product'] = $this->product_model->get_all_product_info();
 
-        $data['title'] = 'Manage Product';
+        $data['title'] = '管理商品';
         $data['subview'] = $this->load->view('admin/product/notification_product', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }

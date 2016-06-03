@@ -89,7 +89,7 @@ class Order extends Admin_Controller
         }
 
         // view page
-        $data['title'] = 'Add New Order';
+        $data['title'] = '新增訂單';
         $data['editor'] = $this->data;
         $data['editor2'] = $this->data2;
         $data['subview'] = $this->load->view('admin/order/new_order', $data, true);
@@ -469,7 +469,7 @@ class Order extends Admin_Controller
         $this->tbl_order_details('order_details_id');
         $data['order_details']= $this->global_model->get_by(array('order_id'=>$data['invoice_info']->order_id), false);
 
-        $data['title'] = 'Order Invoice';
+        $data['title'] = '訂單報價單';
         $data['subview'] = $this->load->view('admin/order/order_invoice', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -477,14 +477,14 @@ class Order extends Admin_Controller
     /*** Manage Order ***/
     public function manage_order(){
         $data['order'] = $this->order_model->get_all_order();
-        $data['title'] = 'Manage Order';
+        $data['title'] = '管理訂單';
         $data['subview'] = $this->load->view('admin/order/manage_order', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
 
     /*** Pending Order ***/
     public function pending_order(){
-        $data['title'] = 'Pending Order';
+        $data['title'] = '尚未確認訂單';
         $data['subview'] = $this->load->view('admin/order/pending_order', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -492,7 +492,7 @@ class Order extends Admin_Controller
     /*** Manage Invoice ***/
     public function manage_invoice(){
         $data['invoice'] = $this->order_model->get_all_invoice();
-        $data['title'] = 'Manage Invoice';
+        $data['title'] = '管理報價單';
         $data['subview'] = $this->load->view('admin/order/manage_invoice', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -518,7 +518,7 @@ class Order extends Admin_Controller
 
         //get invoice
         $data['order'] = $this->order_model->get_all_order();
-        $data['title'] = 'View Order';
+        $data['title'] = '查看訂單';
         $data['subview'] = $this->load->view('admin/order/order_view', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -603,7 +603,7 @@ class Order extends Admin_Controller
         //order details
         $this->tbl_order_details('order_details_id');
         $data['order_details']= $this->global_model->get_by(array('order_id'=>$data['invoice_info']->order_id), false);
-        $data['title'] = 'Order Invoice';
+        $data['title'] = '訂單報價單';
 
         $html = $this->load->view('admin/order/pdf_order_invoice', $data, true);
         $filename = 'INV-'.$id;

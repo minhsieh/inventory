@@ -24,7 +24,7 @@ class Employee extends Admin_Controller
     /*** Create New User ***/
     public function add_employee($id = null)
     {
-        $data['title'] = 'Add Employee';
+        $data['title'] = '新增員工';
 
         if (!empty($id)) {
             $data['employee_id'] = $this->encryption->decrypt($id);
@@ -87,7 +87,7 @@ class Employee extends Admin_Controller
     {
 
         $data['menu'] = array('user_role' => 1, 'c_user_role' => 1);
-        $data['title'] = 'Employee List';
+        $data['title'] = '員工清單';
 
         $this->user_model->_table_name = 'tbl_user';
         $this->user_model->_order_by = 'user_id';

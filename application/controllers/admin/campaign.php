@@ -33,7 +33,7 @@ class Campaign extends Admin_Controller
             }
         }
 
-        $data['title'] = 'Create Email';
+        $data['title'] = '新增電子報';
         $data['subview'] = $this->load->view('admin/campaign/new_campaign', $data, true);
         $this->load->view('admin/_layout_main', $data);
 
@@ -59,7 +59,7 @@ class Campaign extends Admin_Controller
         $this->tbl_campaign('campaign_id','desc');
         $data['campaign'] = $this->global_model->get();
 
-        $data['title'] = 'Manage Campaign';
+        $data['title'] = '管理電子報';
         $data['subview'] = $this->load->view('admin/campaign/manage_campaign', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -69,7 +69,7 @@ class Campaign extends Admin_Controller
         $this->tbl_campaign('campaign_id');
         $data['campaign'] = $this->global_model->get_by(array('campaign_id'=>$id), true);
 
-        $data['title'] = 'View Email';
+        $data['title'] = '查看電子報';
         $data['campaign_id'] = $id;
         $data['modal_subview'] = $this->load->view('admin/campaign/_modal_view_email', $data, FALSE);
         $this->load->view('admin/_layout_modal', $data);
@@ -159,7 +159,7 @@ class Campaign extends Admin_Controller
         $this->tbl_campaign_result('campaign_result_id','desc');
         $data['campaign_result'] = $this->global_model->get();
 
-        $data['title'] = 'Campaign Result';
+        $data['title'] = '查看發送結果';
         $data['subview'] = $this->load->view('admin/campaign/campaign_result', $data, TRUE);
         $this->load->view('admin/_layout_main', $data);
 

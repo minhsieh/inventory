@@ -21,25 +21,25 @@ if(!empty($info->logo)){
 if(!empty($info->company_name)){
     $company_name = $info->company_name;
 }else{
-    $company_name = 'Your Company Name';
+    $company_name = '你的公司名稱';
 }
 //company phone
 if(!empty($info->phone)){
     $company_phone = $info->phone;
 }else{
-    $company_phone = 'Company Phone';
+    $company_phone = '公司電話';
 }
 //company email
 if(!empty($info->email)){
     $company_email = $info->email;
 }else{
-    $company_email = 'Company Email';
+    $company_email = '公司Email';
 }
 //company address
 if(!empty($info->address)){
     $address = $info->address;
 }else{
-    $address = 'Company Address';
+    $address = '公司地址';
 }
 
 
@@ -52,17 +52,17 @@ if(!empty($info->address)){
 <!--/ Massage-->
 <div class="box">
     <div class="box-header box-header-background with-border">
-        <h3 class="box-title">Order Invoice</h3>
+        <h3 class="box-title">訂單報價單</h3>
         <div class="box-tools pull-right">
             <!-- Buttons, labels, and many other things can be placed here! -->
             <!-- Here is a label for example -->
             <div class="box-tools">
                 <div class="btn-group" role="group" >
-                    <a onclick="print_invoice('printableArea')" class="btn btn-default ">Print</a>
+                    <a onclick="print_invoice('printableArea')" class="btn btn-default ">列印</a>
                     <a href="<?php echo base_url() ?>admin/order/pdf_invoice/<?php echo $invoice_info->invoice_no ?>" class="btn btn-default ">PDF</a>
                     <a href="<?php echo base_url() ?>admin/order/email_invoice/<?php echo $invoice_info->invoice_no ?>" class="btn btn-default " <?php
                     echo $order_info->customer_email == '' ? 'disable':''
-                    ?>>Email to Customer</a>
+                    ?>>Email給客戶</a>
                 </div>
             </div>
 
@@ -96,7 +96,7 @@ if(!empty($info->address)){
                 <main>
                     <div id="details" class="clearfix">
                         <div id="client" style="margin-right: 100px">
-                            <div class="to">CUSTOMER BILLING INFO:</div>
+                            <div class="to">客戶帳單資訊:</div>
                             <h2 class="name"><?php echo $order_info->customer_name ?></h2>
                             <div class="address"><?php echo $order_info->customer_address ?></div>
                             <div class="address"><?php echo $order_info->customer_phone ?></div>
@@ -104,7 +104,7 @@ if(!empty($info->address)){
                         </div>
                         <?php if(!empty($order_info->shipping_address)):?>
                         <div id="shipping">
-                            <div class="to">CUSTOMER SHIPPING INFO:</div>
+                            <div class="to">客戶運送資訊:</div>
 
                             <div class="address"><?php
                                 echo  $order_info->shipping_address;
@@ -114,9 +114,9 @@ if(!empty($info->address)){
                         <?php endif ?>
 
                         <div id="invoice">
-                            <h1>INVOICE <?php echo $invoice_info->invoice_no ?></h1>
-                            <div class="date">Date of Invoice: <?php echo date('Y-m-d', strtotime($invoice_info->invoice_date )) ?></div>
-                            <div class="date">Sales Person: <?php echo $order_info->sales_person ?></div>
+                            <h1>報價單 <?php echo $invoice_info->invoice_no ?></h1>
+                            <div class="date">報價單日期: <?php echo date('Y-m-d', strtotime($invoice_info->invoice_date )) ?></div>
+                            <div class="date">銷售人: <?php echo $order_info->sales_person ?></div>
 
                         </div>
                     </div>
@@ -124,10 +124,10 @@ if(!empty($info->address)){
                         <thead>
                         <tr>
                             <th class="no text-right">#</th>
-                            <th class="desc">DESCRIPTION</th>
-                            <th class="unit text-right">UNIT PRICE</th>
-                            <th class="qty text-right">QUANTITY</th>
-                            <th class="total text-right ">TOTAL</th>
+                            <th class="desc">描述</th>
+                            <th class="unit text-right">單價</th>
+                            <th class="qty text-right">數量</th>
+                            <th class="total text-right ">總計</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -146,7 +146,7 @@ if(!empty($info->address)){
                         <tfoot>
                         <tr>
                             <td colspan="2"></td>
-                            <td colspan="2">SUBTOTAL</td>
+                            <td colspan="2">小計</td>
                             <td><?php echo number_format($order_info->sub_total,2) ?></td>
                         </tr>
 
@@ -159,14 +159,14 @@ if(!empty($info->address)){
                         <?php if($order_info->discount):?>
                             <tr>
                                 <td colspan="2"></td>
-                                <td colspan="2">Discount Amount</td>
+                                <td colspan="2">折扣金額</td>
                                 <td><?php echo number_format($order_info->discount_amount,2) ?></td>
                             </tr>
                         <?php endif; ?>
 
                         <tr>
                             <td colspan="2"></td>
-                            <td colspan="2">GRAND TOTAL</td>
+                            <td colspan="2">總計</td>
                             <td><?php echo $currency.' '.number_format($order_info->grand_total,2) ?></td>
                         </tr>
                         </tfoot>

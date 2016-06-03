@@ -21,25 +21,25 @@ if(!empty($info->logo)){
 if(!empty($info->company_name)){
     $company_name = $info->company_name;
 }else{
-    $company_name = 'Your Company Name';
+    $company_name = '你的公司名稱';
 }
 //company phone
 if(!empty($info->phone)){
     $company_phone = $info->phone;
 }else{
-    $company_phone = 'Company Phone';
+    $company_phone = '公司電話';
 }
 //company email
 if(!empty($info->email)){
     $company_email = $info->email;
 }else{
-    $company_email = 'Company Email';
+    $company_email = '公司Email';
 }
 //company address
 if(!empty($info->address)){
     $address = $info->address;
 }else{
-    $address = 'Company Address';
+    $address = '公司地址';
 }
 
 
@@ -298,7 +298,7 @@ footer {
     <div id="details" class="clearfix">
 
         <div id="client">
-            <div class="to">CUSTOMER BILLING INFO:</div>
+            <div class="to">顧客帳單資訊:</div>
             <h2 class="name"><?php echo $order_info->customer_name ?></h2>
             <div class="address"><?php echo $order_info->customer_address ?></div>
             <div class="address"><?php echo $order_info->customer_phone ?></div>
@@ -307,7 +307,7 @@ footer {
 
             <div id="shipping">
                 <?php if(!empty($order_info->shipping_address)):?>
-                <div class="to">CUSTOMER SHIPPING INFO:</div>
+                <div class="to">顧客運送資訊:</div>
 
                 <div class="address"><?php
                     echo  $order_info->shipping_address;
@@ -317,9 +317,9 @@ footer {
 
 
         <div id="invoice">
-            <h1>INVOICE <?php echo $invoice_info->invoice_no ?></h1>
-            <div class="date">Date of Invoice: <?php echo date('Y-m-d', strtotime($invoice_info->invoice_date )) ?></div>
-            <div class="date">Sales Person: <?php echo $order_info->sales_person ?></div>
+            <h1>報價單 <?php echo $invoice_info->invoice_no ?></h1>
+            <div class="date">報價單日期: <?php echo date('Y-m-d', strtotime($invoice_info->invoice_date )) ?></div>
+            <div class="date">銷售人: <?php echo $order_info->sales_person ?></div>
 
         </div>
     </div>
@@ -327,10 +327,10 @@ footer {
         <thead>
         <tr>
             <th class="desc text-right">#</th>
-            <th class="desc">DESCRIPTION</th>
-            <th class="unit text-right">UNIT PRICE</th>
-            <th class="qty text-right">QUANTITY</th>
-            <th class="total text-right ">TOTAL</th>
+            <th class="desc">描述</th>
+            <th class="unit text-right">單價</th>
+            <th class="qty text-right">數量</th>
+            <th class="total text-right ">總計</th>
         </tr>
         </thead>
         <tbody>
@@ -350,7 +350,7 @@ footer {
         <tfoot>
         <tr>
             <td colspan="2"></td>
-            <td  colspan="2" >SUBTOTAL</td>
+            <td  colspan="2" >小計</td>
             <td><?php echo number_format($order_info->sub_total,2) ?></td>
         </tr>
 
@@ -364,14 +364,14 @@ footer {
         <?php if($order_info->discount):?>
             <tr>
                 <td colspan="2" ></td>
-                <td colspan="2" >Discount Amount</td>
+                <td colspan="2" >折扣金額</td>
                 <td><?php echo number_format($order_info->discount_amount,2) ?></td>
             </tr>
         <?php endif; ?>
 
         <tr>
             <td colspan="2"></td>
-            <td colspan="2">GRAND TOTAL</td>
+            <td colspan="2">總計</td>
             <td><?php echo $money_sign ?> <?php echo number_format($order_info->grand_total ,2) ?></td>
         </tr>
 

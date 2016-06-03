@@ -35,7 +35,7 @@ class Settings extends Admin_Controller
         }
 
         // view page
-        $data['title'] = 'Business Profile';
+        $data['title'] = '公司檔案';
         $data['subview'] = $this->load->view('admin/settings/business_profile', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -86,7 +86,7 @@ class Settings extends Admin_Controller
         }
 
         //view page
-        $data['title'] = 'Manage Tax Rules';
+        $data['title'] = '管理稅務規則';
         $data['subview'] = $this->load->view('admin/settings/tax', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }

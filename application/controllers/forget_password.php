@@ -24,7 +24,7 @@ class Forget_Password extends CI_Controller
 
     public function index(){
 
-        $data['title'] = 'Forget Password';  // title page
+        $data['title'] = '忘記密碼';  // title page
 
         $data['subview'] = $this->load->view('forget_password', $data, true);
         $this->load->view('forget_password', $data);

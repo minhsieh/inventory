@@ -54,7 +54,7 @@ class Customer extends Admin_Controller
 
         $data['code'] = $data['code'] = rand(10000000, 99999);
 
-        $data['title'] = 'Add Customer';  // title page
+        $data['title'] = '新增客戶';  // title page
         $data['editor'] = $this->data;
         $data['subview'] = $this->load->view('admin/customer/add_customer', $data, true);
         $this->load->view('admin/_layout_main', $data);
@@ -91,7 +91,7 @@ class Customer extends Admin_Controller
 
         $this->tbl_customer('customer_id');
         $data['customer'] = $this->global_model->get();
-        $data['title'] = 'Manage Customer';
+        $data['title'] = '管理客戶';
         $data['subview'] = $this->load->view('admin/customer/manage_customer', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }

@@ -9,7 +9,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">General Settings</h3>
+                        <h3 class="box-title ">主要設定</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -29,8 +29,8 @@
 
                                 <!-- /.Company Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Company Name <span class="required">*</span></label>
-                                    <input type="text" name="company_name" placeholder="Company Name" required
+                                    <label for="exampleInputEmail1">公司名稱 <span class="required">*</span></label>
+                                    <input type="text" name="company_name" placeholder="公司名稱" required
                                            value="<?php
                                            if (!empty($business_info->company_name)) {
                                                echo $business_info->company_name;
@@ -41,9 +41,9 @@
 
                                 <!-- /.Company Email -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Company Email <span
+                                    <label for="exampleInputEmail1">公司Email <span
                                             class="required">*</span></label>
-                                    <input type="text" placeholder="Company Email" name="email" required
+                                    <input type="text" placeholder="公司Email" name="email" required
                                            value="<?php
                                            if (!empty($business_info->email)) {
                                                echo $business_info->email;
@@ -54,9 +54,9 @@
 
                                 <!-- /.Address -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Address <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">地址 <span class="required">*</span></label>
                                     <textarea name="address" class="form-control autogrow" id="field-ta" required
-                                              placeholder="Business Address"><?php
+                                              placeholder="地址"><?php
                                         if (!empty($business_info->address)) {
                                             echo $business_info->address;
                                         }
@@ -65,8 +65,8 @@
 
                                 <!-- /.Phone -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Phone</label>
-                                    <input type="text" placeholder="Phone" name="phone"
+                                    <label for="exampleInputEmail1">電話</label>
+                                    <input type="text" placeholder="電話" name="phone"
                                            value="<?php
                                            if (!empty($business_info->phone)) {
                                                echo $business_info->phone;
@@ -77,8 +77,8 @@
 
                                 <!-- /.Currency -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Currency <span class="required">*</span></label>
-                                    <input type="text" placeholder="Currency" name="currency" required
+                                    <label for="exampleInputEmail1">貨幣 <span class="required">*</span></label>
+                                    <input type="text" placeholder="貨幣" name="currency" required
                                            value="<?php
                                            if (!empty($business_info->currency)) {
                                                echo $business_info->currency;
@@ -89,7 +89,7 @@
 
                                 <!-- /.Company Logo -->
                                 <div class="form-group">
-                                    <label>Company Logo</label>
+                                    <label>公司Logo</label>
                                 </div>
                                 <div class="form-group"><!-- Company Logo -->
                                     <input type="hidden" name="old_path" value="<?php
@@ -111,11 +111,11 @@
                                         <div>
                                     <span class="btn btn-default btn-file">
                                         <span class="fileinput-new"><input type="file"  name="logo" size="20"/></span>
-                                        <span class="fileinput-exists">Change</span>
+                                        <span class="fileinput-exists">更換</span>
 
                                     </span>
                                             <a href="#" class="btn btn-default fileinput-exists"
-                                               data-dismiss="fileinput">Remove</a>
+                                               data-dismiss="fileinput">移除</a>
 
                                         </div>
                                         <div id="valid_msg" class="required"></div>
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn bg-navy col-md-offset-3" type="submit">Save Business Profile
+                        <button type="submit" class="btn bg-navy col-md-offset-3" type="submit">儲存公司檔案
                         </button>
                     </div>
                 </form>

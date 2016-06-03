@@ -24,7 +24,7 @@ class Login extends MY_Controller
     {
 
 
-        $data['title'] = 'User Login';
+        $data['title'] = '使用者登入';
         $data['subview'] = $this->load->view('login', $data, true);
         $this->load->view('login', $data);
 

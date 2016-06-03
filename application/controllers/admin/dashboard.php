@@ -59,7 +59,7 @@ class Dashboard extends Admin_Controller
         $data['year'] = date('Y');
 
         $data['yearly_sales_report'] = $this->get_yearly_sales_report($data['year']);  // get yearly report
-        $data['title'] = 'Easy Inventory'; // title
+        $data['title'] = '倉儲貨物管理系統'; // title
         $data['subview'] = $this->load->view('admin/dashboard', $data, true); // sub view
         $this->load->view('admin/_layout_main', $data); // main page
     }
@@ -86,7 +86,7 @@ class Dashboard extends Admin_Controller
     /*** Login ***/
     public function login()
     {
-        $data['title'] = 'Login';
+        $data['title'] = '登入';
         $this->load->view('admin/login');
     }
 

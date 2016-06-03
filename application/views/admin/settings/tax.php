@@ -12,7 +12,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Manage Tax Rules</h3>
+                        <h3 class="box-title ">管理賦稅規則</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -34,8 +34,8 @@
 
                                 <!-- /.tax title -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Title <span class="required">*</span></label>
-                                    <input type="text" required name="tax_title" placeholder="Title"
+                                    <label for="exampleInputEmail1">標題 <span class="required">*</span></label>
+                                    <input type="text" required name="tax_title" placeholder="標題"
                                            value="<?php
                                            if (!empty($tax->tax_title)) {
                                                echo $tax->tax_title;
@@ -46,8 +46,8 @@
 
                                 <!-- /.tax title -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Rate <span class="required">*</span></label>
-                                    <input type="text" required name="tax_rate" placeholder="Rate"
+                                    <label for="exampleInputEmail1">稅率 <span class="required">*</span></label>
+                                    <input type="text" required name="tax_rate" placeholder="稅率"
                                            value="<?php
                                            if (!empty($tax->tax_rate)) {
                                                echo $tax->tax_rate;
@@ -58,13 +58,13 @@
 
                                 <!-- /.Tax type -->
                                 <div class="form-group">
-                                    <label>Tax Type <span class="required">*</span></label>
+                                    <label>稅務類型 <span class="required">*</span></label>
                                     <select name="tax_type" class="form-control col-sm-5">
-                                        <option value="">Select Tax Type</option>
+                                        <option value="">選擇稅務類型</option>
                                         <option value="1" <?php
                                         if(!empty($tax->tax_type)){
                                             echo $tax->tax_type==1 ?'selected':'';
-                                        } ?>>Percentage (%)</option>
+                                        } ?>>百分比 (%)</option>
 
                                         <option value="2" <?php
 
@@ -85,7 +85,7 @@
                                     </select>
                                 </div><br/><br/>
 
-                                <button type="submit" class="btn bg-navy" type="submit">Save Tax Rule
+                                <button type="submit" class="btn bg-navy" type="submit">儲存賦稅規則
                                 </button>
                             </div>
                             <!-- /.box-body -->
@@ -105,10 +105,10 @@
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Tax Name</th>
-                        <th class="active">Tax Rate</th>
-                        <th class="active">Tax Type</th>
-                        <th class="col-sm-2 active">Action</th>
+                        <th class="active">稅務名稱</th>
+                        <th class="active">稅務比率</th>
+                        <th class="active">稅務類型</th>
+                        <th class="col-sm-2 active">動作</th>
 
                     </tr>
                     </thead>
@@ -138,7 +138,7 @@
                     ?><!--get all category if not this empty-->
                     <?php else : ?> <!--get error message if this empty-->
                         <td colspan="5">
-                            <strong>There is no record for display</strong>
+                            <strong>目前沒有資料顯示</strong>
                         </td><!--/ get error message if this empty-->
                     <?php
                     endif; ?>

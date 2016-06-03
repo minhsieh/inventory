@@ -27,7 +27,7 @@ class Global_Controller extends Admin_Controller
         if(!empty($user_name)) {
             $result = $this->global_model->check_user_name($user_name, $user_id);
             if ($result) {
-                echo 'This User Name is Exist!';
+                echo '這個使用者名稱已經存在!';
             }
         }
     }

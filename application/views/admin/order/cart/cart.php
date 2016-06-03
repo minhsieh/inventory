@@ -5,11 +5,11 @@
     <thead ><!-- Table head -->
     <tr>
         <th class="active">Sl</th>
-        <th class="active col-sm-6">Product</th>
-        <th class="active ">Qty</th>
-        <th class="active ">Unit Price</th>
-        <th class="active">Total</th>
-        <th class="active">Action</th>
+        <th class="active col-sm-6">商品</th>
+        <th class="active ">數量</th>
+        <th class="active ">單價</th>
+        <th class="active">總計</th>
+        <th class="active">動作</th>
 
     </tr>
     </thead><!-- / Table head -->
@@ -38,7 +38,7 @@
                         <span class="input-group-addon">
                           <input type="checkbox" id="<?php echo 'opt'.$item['rowid'] ?>" onclick="return price_checkbox(this)" name="custom_price"
                                  <?php echo $item['price_option'] == 'custom_price' ? 'checked':'' ?>
-                                 data-placement="top" data-toggle="tooltip" data-original-title="Custom Price">
+                                 data-placement="top" data-toggle="tooltip" data-original-title="特殊價格">
                         </span>
                     <input  type="text" name="price" value="<?php echo $item['price'] ?>"  onblur ="order(this);" id="<?php echo 'pri'.$item['rowid'] ?>" class="form-control"
                             <?php echo $item['price_option'] == 'custom_price' ? '':'disabled' ?> >
@@ -67,7 +67,7 @@
 
     <?php else : ?> <!--get error message if this empty-->
         <td colspan="6">
-            <strong>There is no record for display</strong>
+            <strong>目前沒有資料顯示</strong>
         </td><!--/ get error message if this empty-->
     <?php endif; ?>
     </tbody><!-- / Table body -->

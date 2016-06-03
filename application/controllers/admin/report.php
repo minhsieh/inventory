@@ -26,7 +26,7 @@ class Report extends Admin_Controller
     /*** Sales Report ***/
     public function sales_report()
     {
-        $data['title'] = 'View Sales Report';
+        $data['title'] = '查看銷售報告';
 
         $start_date = $this->input->post('start_date', true);
         $end_date = $this->input->post('end_date', true);
@@ -96,7 +96,7 @@ class Report extends Admin_Controller
     /*** purchase Report ***/
     public function purchase_report()
     {
-        $data['title'] = 'View Purchase Report';
+        $data['title'] = '查看採購報告';
 
         $start_date = $this->input->post('start_date', true);
         $end_date = $this->input->post('end_date', true);
